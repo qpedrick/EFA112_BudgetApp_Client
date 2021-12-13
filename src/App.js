@@ -1,31 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import Nav from './components/Home/Nav';
-import Budget from './components/Budget/Budget';
-import ExpenseIndex from './components/Expense/ExpenseIndex'
-import IncomeIndex from './components/Income/IncomeIndex'
+import React, {useState} from 'react';
+//import Nav from './components/Home/Nav';
+//import Budget from './components/Budget/Budget';
+// import ExpenseIndex from './components/Expense/ExpenseIndex'
+// import IncomeIndex from './components/Income/IncomeIndex'
+import { Button } from 'reactstrap';
+import Auth from './components/Auth/Auth';
+import "bootstrap/dist/css/bootstrap.css"
 
 function App() {
-  const [sessionToken, setSessionToken] = useState('');
-
-  useEffect(() => {
-    if(localStorage.getItem('token')) {
-      setSessionToken(localStorage.getItem('token'));
-    }
-  }, [])
-
-  const updateToken = (newToken) => {
-    localStorage.setItem('token', newToken);
-    setSessionToken(newToken);
-  }
-
-  const clearToken = () => {
-    localStorage.clear();
-    setSessionToken('');
-  }
+  const [toggle, setToggle] = useState('show signup')
 
   return(
     <div>
-      <Nav clickLogout = {clearToken} />
+      <Auth/>
+      <h3>Menu { toggle }</h3>
+      <Button onClick = {(e) => setToggle('show signup')}>Show</Button>
+      <Button onClick = {(e) => setToggle('hide signup')}>Hide</Button>
     </div>
   );
 }
