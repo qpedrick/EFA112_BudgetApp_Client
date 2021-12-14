@@ -49,7 +49,6 @@ const IncomeIndex = (props) => {
                     </Col>
                     <Col md='9'>
                         <IncomeTable incomeBudgets={incomeBudgets} editUpdateIncomeBudget={editUpdateIncomeBudget} updateOn={updateOn} fetchIncomes={fetchIncomes} token={props.token}/>
-
                     </Col>
                     {updateIncomeBudget ? <IncomeEdit incomeBudgetToUpdate={incomeBudgetToUpdate} updateOff={updateOff} token={props.token} fetchIncomes={fetchIncomes}/> : <> </>}
                 </Row>
