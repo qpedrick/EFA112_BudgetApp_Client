@@ -2,16 +2,16 @@ import React, {useState} from 'react';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 const ExpenseEdit = (props) => {
-    const [editTransportation, setEditTransportation] = useState('');
-    const [editHousing, setEditHousing] = useState('');
-    const [editFood, setEditFood] = useState('');
-    const [editPersonalCare, setEditPersonalCare] = useState('');
-    const [editLifestyle, setEditLifestyle] = useState('');
-    const [editHealth, setEditHealth] = useState('');
-    const [editInsurance, setEditInsurance] = useState('');
-    const [editDebt, setEditDebt] = useState('');
-    const [editSavings, setEditSavings] = useState('');
-    const [editGiving, setEditGiving] = useState('');
+    const [editTransportation, setEditTransportation] = useState(props.expenseToUpdate.Transportation);
+    const [editHousing, setEditHousing] = useState(props.expenseToUpdate.Housing);
+    const [editFood, setEditFood] = useState(props.expenseToUpdate.Food);
+    const [editPersonalCare, setEditPersonalCare] = useState(props.expenseToUpdate.PersonalCare);
+    const [editLifestyle, setEditLifestyle] = useState(props.expenseToUpdate.Lifestyle);
+    const [editHealth, setEditHealth] = useState(props.expenseToUpdate.Health);
+    const [editInsurance, setEditInsurance] = useState(props.expenseToUpdate.Insurance);
+    const [editDebt, setEditDebt] = useState(props.expenseToUpdate.Debt);
+    const [editSavings, setEditSavings] = useState(props.expenseToUpdate.Savings);
+    const [editGiving, setEditGiving] = useState(props.expenseToUpdate.Giving);
     
     const expenseUpdate = (e, expense) => {
         e.preventDefault();
