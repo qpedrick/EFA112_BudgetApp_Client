@@ -11,10 +11,10 @@ const IncomeEdit = (props) => {
         event.preventDefault();
         fetch(`http://localhost:3001/income/${props.incomeBudgetToUpdate.id}`, {
             method: 'PUT',
-            body: JSON.stringify({income: {paychecks: editPaychecks, investments: editInvestments, reimbursements: editReimbursements, misc: editMisc}}),
+            body: JSON.stringify({Paychecks: editPaychecks, Investments: editInvestments, Reimbursements: editReimbursements, Misc: editMisc}),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.token
+                'Authorization': `Bearer ${props.token}`
             })
         }).then((res) => {
             props.fetchIncomes();

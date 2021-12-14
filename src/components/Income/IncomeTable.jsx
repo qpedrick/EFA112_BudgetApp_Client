@@ -8,7 +8,7 @@ const IncomeTable = (props) => {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.token
+                'Authorization': `Bearer ${props.token}`
             })
         })
         .then(() => props.fetchIncomes())
@@ -19,10 +19,10 @@ const IncomeTable = (props) => {
             return(
                 <tr key={index}>
                     <th scope="row">{incomeBudget.id}</th>
-                    <td>{incomeBudget.paychecks}</td>
-                    <td>{incomeBudget.investments}</td>
-                    <td>{incomeBudget.reimbursements}</td>
-                    <td>{incomeBudget.misc}</td>
+                    <td>{incomeBudget.Paychecks}</td>
+                    <td>{incomeBudget.Investments}</td>
+                    <td>{incomeBudget.Reimbursements}</td>
+                    <td>{incomeBudget.Misc}</td>
                     <td>
                         <Button color="warning" onClick={() => {props.editUpdateIncomeBudget(incomeBudget); props.updateOn()}}>Update Budget</Button>
                         <Button color="danger" onClick={() => {deleteIncome(incomeBudget)}}>Delete Budget</Button>
@@ -35,6 +35,7 @@ const IncomeTable = (props) => {
     return(
         <>
         <h2>Budget</h2>
+        <hr />
         <Table>
             <thead>
                 <tr>

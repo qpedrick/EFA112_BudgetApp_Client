@@ -7,24 +7,25 @@ const IncomeCreate = (props) => {
     const [reimbursements, setReimbursements] = useState('');
     const [misc, setMisc] = useState('');
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        fetch('http://localhost:3001/income/create', {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        fetch('http://localhost:3001/income/create/', {
             method: 'POST',
-            body: JSON.stringify({income: {paychecks: paychecks, investments: investments, reimbursements: reimbursements, misc: misc}}),
+            body: JSON.stringify({Paychecks: paychecks, Investments: investments, Reimbursements: reimbursements, Misc: misc}),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${props.token}`
             })
-        }).then((res) => console.log(res.json()))
-        .then((logData) => {
-            console.log(logData);
+        }).then((res) => res.json())
+        .then((incomeData) => {
+            console.log(incomeData);
             setPaychecks('');
             setInvestments('');
             setReimbursements('');
             setMisc('');
             props.fetchIncomes();
         })
+        .catch(err => console.log(err))
     }
 
     return (
@@ -33,25 +34,24 @@ const IncomeCreate = (props) => {
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="paychecks"/>
-                <Input name="paychecks" value={paychecks} onChange={(event) => setPaychecks(event.target.value)}/>
+                <Input name="paychecks" value={paychecks} placeholder="Enter paycheck income" onChange={(e) => setPaychecks(e.target.value)}/>
             </FormGroup>
             <FormGroup>
             <Label htmlFor="investments"/>
-                <Input name="investments" value={investments} onChange={(event) => setInvestments(event.target.value)}/>
+                <Input name="investments" value={investments} placeholder="Enter investments income" onChange={(e) => setInvestments(e.target.value)}/>
             </FormGroup>
             <FormGroup>
             <Label htmlFor="reimbursements"/>
-                <Input name="reimbursements" value={reimbursements} onChange={(event) => setReimbursements(event.target.value)}/>
+                <Input name="reimbursements" value={reimbursements} placeholder="Enter reimbursements income" onChange={(e) => setReimbursements(e.target.value)}/>
             </FormGroup>
             <FormGroup>
             <Label htmlFor="misc"/>
-                <Input name="misc" value={misc} onChange={(event) => setMisc(event.target.value)}/>
+                <Input name="misc" value={misc} placeholder="Enter miscellaneous income" onChange={(e) => setMisc(e.target.value)}/>
             </FormGroup>
-            <Button type="submit">Submit</Button>
+            <Button type="submit" >Submit</Button>
         </Form>
         </>
     )
-
 }
 
 export default IncomeCreate;
