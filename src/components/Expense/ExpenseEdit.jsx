@@ -17,19 +17,19 @@ const ExpenseEdit = (props) => {
         e.preventDefault();
         fetch(`http://localhost:3001/expense/${props.expenseToUpdate.id}`, {
             method: 'PUT',
-            body: JSON.stringify({expense:
+            body: JSON.stringify(
             {
-                transportation: editTransportation,
-                housing: editHousing,
-                food: editFood,
-                personalCare: editPersonalCare,
-                lifestyle: editLifestyle,
-                health: editHealth,
-                insurance: editInsurance,
-                debt: editDebt,
-                savings: editSavings,
-                giving: editGiving
-            }}),
+                Transportation: editTransportation,
+                Housing: editHousing,
+                Food: editFood,
+                PersonalCare: editPersonalCare,
+                Lifestyle: editLifestyle,
+                Health: editHealth,
+                Insurance: editInsurance,
+                Debt: editDebt,
+                Savings: editSavings,
+                Giving: editGiving
+            }),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 "Authorization": `Bearer ${props.token}`
@@ -46,47 +46,47 @@ const ExpenseEdit = (props) => {
     return(
         <Modal isOpen = {true}>
             <ModalHeader>Log an Expense</ModalHeader>
-            <ModalBody>
-                <Form onSubmit={expenseUpdate}>
+                <ModalBody>
+                    <Form onSubmit={expenseUpdate}>
                     <FormGroup>
                         <Label htmlFor = 'transportation' />
-                        <Input name = 'transportation' value = {editTransportation} onChange={(e) => setEditTransportation(e.target.value)} />
+                        <Input name = 'transportation' value = {editTransportation} onChange={(e) => setEditTransportation(e.target.value)} placeholder = 'transportation' />
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor = 'housing' />
-                        <Input name = 'housing' value = {editHousing} onChange={(e) => setEditHousing(e.target.value)} />
+                        <Input name = 'housing' value = {editHousing} onChange={(e) => setEditHousing(e.target.value)} placeholder='housing'/>
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor = 'food' />
-                        <Input name = 'food' value = {editFood} onChange={(e) => setEditFood(e.target.value)} />
+                        <Input name = 'food' value = {editFood} onChange={(e) => setEditFood(e.target.value)} placeholder='food'/>
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor = 'personalCare' />
-                        <Input name = 'personalCare' value = {editPersonalCare} onChange={(e) => setEditPersonalCare(e.target.value)} />
+                        <Input name = 'personalCare' value = {editPersonalCare} onChange={(e) => setEditPersonalCare(e.target.value)} placeholder='personal care'/>
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor = 'lifestyle' />
-                        <Input name = 'lifetstyle' value = {editLifestyle} onChange={(e) => setEditLifestyle(e.target.value)} />
+                        <Input name = 'lifetstyle' value = {editLifestyle} onChange={(e) => setEditLifestyle(e.target.value)} placeholder='lifestyle' />
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor = 'health' />
-                        <Input name = 'health' value = {editHealth} onChange={(e) => setEditHealth(e.target.value)} />
+                        <Input name = 'health' value = {editHealth} onChange={(e) => setEditHealth(e.target.value)} placeholder = 'health' />
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor = 'insurance' />
-                        <Input name = 'insurance' value = {editInsurance} onChange={(e) => setEditInsurance(e.target.value)} />
+                        <Input name = 'insurance' value = {editInsurance} onChange={(e) => setEditInsurance(e.target.value)} placeholder='insurance'/>
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor = 'debt' />
-                        <Input name = 'debt' value = {editDebt} onChange={(e) => setEditDebt(e.target.value)} />
+                        <Input name = 'debt' value = {editDebt} onChange={(e) => setEditDebt(e.target.value)} placeholder='debt'/>
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor = 'savings' />
-                        <Input name = 'savings' value = {editSavings} onChange={(e) => setEditSavings(e.target.value)} />
+                        <Input name = 'savings' value = {editSavings} onChange={(e) => setEditSavings(e.target.value)} placeholder='savings'/>
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor = 'giving' />
-                        <Input name = 'giving' value = {editGiving} onChange={(e) => setEditGiving(e.target.value)} />
+                        <Input name = 'giving' value = {editGiving} onChange={(e) => setEditGiving(e.target.value)} placeholder='giving'/>
                     </FormGroup>
                     <Button type = 'submit'>Submit Expense Report</Button>
                 </Form>

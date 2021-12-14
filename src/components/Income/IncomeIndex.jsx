@@ -19,7 +19,7 @@ const IncomeIndex = (props) => {
             })
         }).then( (res) => res.json())
         .then((incomeData) => {
-            console.log(incomeData)
+            //console.log(incomeData)
             setIncomeBudgets(incomeData)
         })
     }
