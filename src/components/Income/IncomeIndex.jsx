@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import IncomeCreate from './IncomeCreate';
 import IncomeEdit from './IncomeEdit';
-import React, {useState, useEffect} from 'react';
 import IncomeTable from './IncomeTable';
 import { Container, Row, Col } from 'reactstrap';
 
@@ -20,7 +19,7 @@ const IncomeIndex = (props) => {
             })
         }).then( (res) => res.json())
         .then((incomeData) => {
-            console.log(incomeData)
+            //console.log(incomeData)
             setIncomeBudgets(incomeData)
         })
     }

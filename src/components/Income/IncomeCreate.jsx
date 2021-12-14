@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
 const IncomeCreate = (props) => {
-    const [paychecks, setPaychecks] = useState('');
-    const [investments, setInvestments] = useState('');
-    const [reimbursements, setReimbursements] = useState('');
-    const [misc, setMisc] = useState('');
+    const [paychecks, setPaychecks] = useState(0);
+    const [investments, setInvestments] = useState(0);
+    const [reimbursements, setReimbursements] = useState(0);
+    const [misc, setMisc] = useState(0);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,10 +19,10 @@ const IncomeCreate = (props) => {
         }).then((res) => res.json())
         .then((incomeData) => {
             console.log(incomeData);
-            setPaychecks('');
-            setInvestments('');
-            setReimbursements('');
-            setMisc('');
+            setPaychecks(0);
+            setInvestments(0);
+            setReimbursements(0);
+            setMisc(0);
             props.fetchIncomes();
         })
         .catch(err => console.log(err))
