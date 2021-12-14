@@ -6,7 +6,7 @@ import {Container, Row, Col} from 'reactstrap';
 
 const IncomeIndex = (props) => {
 
-    const [incomeBudget, setIncomeBudget] = useState([]);
+    const [incomeBudgets, setIncomeBudgets] = useState([]);
     const [updateIncomeBudget, setUpdateIncomeBudget] = useState(false);
     const [incomeBudgetToUpdate, setIncomeBudgetToUpdate] = useState([]);
 
@@ -18,8 +18,8 @@ const IncomeIndex = (props) => {
                 'Authorization': `Bearer ${props.token}`
             })
         }).then( (res) => res.json())
-        .then((logData) => {
-            setIncomeBudget(logData)
+        .then((incomeData) => {
+            setIncomeBudgets(incomeData)
         })
     }
 
@@ -37,19 +37,19 @@ const IncomeIndex = (props) => {
         }
 
         useEffect(() => {
-            fetchIncome();
+            fetchIncomes();
         }, [])
 
         return(
             <Container>
                 <Row>
                     <Col m="3">
-                        <IncomeCreate fetchIncome={fetchIncome} token={props.token}/>
+                        <IncomeCreate fetchIncomes={fetchIncomes} token={props.token}/>
                     </Col>
                     <Col md="3">
-                        <IncomeTable incomeBudget={incomeBudget} editUpdateIncomeBudget={editUpdateIncomeBudget} updateOn={updateOn} fetchIncome={fetchIncome} token={props.token}/>
+                        <IncomeTable incomeBudgets={incomeBudgets} editUpdateIncomeBudget={editUpdateIncomeBudget} updateOn={updateOn} fetchIncomes={fetchIncomes} token={props.token}/>
                     </Col>
-                    {updateIncomeBudget ? <IncomeEdit incomeBudgetToUpdate={incomeBudgetToUpdate} updateOff={updateOff} token={props.token} fetchIncome={fetchIncome}/> : <> </>}
+                    {updateIncomeBudget ? <IncomeEdit incomeBudgetToUpdate={incomeBudgetToUpdate} updateOff={updateOff} token={props.token} fetchIncomes={fetchIncomes}/> : <> </>}
                 </Row>
             </Container>
         )

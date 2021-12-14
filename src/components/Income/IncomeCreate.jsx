@@ -23,7 +23,7 @@ const IncomeCreate = (props) => {
             setInvestments('');
             setReimbursements('');
             setMisc('');
-            props.fetchIncome();
+            props.fetchIncomes();
         })
     }
 

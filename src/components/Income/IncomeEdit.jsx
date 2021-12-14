@@ -17,14 +17,14 @@ const IncomeEdit = (props) => {
                 'Authorization': props.token
             })
         }).then((res) => {
-            props.fetchIncome();
+            props.fetchIncomes();
             props.updateOff();
         })
     }
 
     return (
         <Modal isOpen={true}>
-            <ModalHeader>Update a Workout</ModalHeader>
+            <ModalHeader>Update Income</ModalHeader>
             <ModalBody>
                 <Form onSubmit={incomeUpdate}>
                     <FormGroup>
@@ -43,7 +43,7 @@ const IncomeEdit = (props) => {
                     <Label htmlFor="misc">Edit Misc:</Label>
                         <Input name="misc" value={editMisc} onChange={(event) => setEditMisc(event.target.value)}/>
                     </FormGroup>
-                <Button type="submit">Submit</Button>
+                <Button type="submit">Submit Updated Income</Button>
             </Form>
             </ModalBody>
         </Modal>
