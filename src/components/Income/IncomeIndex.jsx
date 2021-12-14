@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import IncomeCreate from './IncomeCreate';
 import IncomeEdit from './IncomeEdit';
+import React, {useState, useEffect} from 'react';
 import IncomeTable from './IncomeTable';
 import { Container, Row, Col } from 'reactstrap';
 
@@ -49,6 +50,7 @@ const IncomeIndex = (props) => {
                     </Col>
                     <Col md='9'>
                         <IncomeTable incomeBudgets={incomeBudgets} editUpdateIncomeBudget={editUpdateIncomeBudget} updateOn={updateOn} fetchIncomes={fetchIncomes} token={props.token}/>
+
                     </Col>
                     {updateIncomeBudget ? <IncomeEdit incomeBudgetToUpdate={incomeBudgetToUpdate} updateOff={updateOff} token={props.token} fetchIncomes={fetchIncomes}/> : <> </>}
                 </Row>

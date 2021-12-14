@@ -5,6 +5,7 @@ const IncomeTable = (props) => {
 
     const deleteIncome = (incomeBudget) => {
         fetch(`https://localhost:3001/income/${incomeBudget.id}`, {
+
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',

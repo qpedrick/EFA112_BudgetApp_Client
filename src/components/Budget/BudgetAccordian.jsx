@@ -3,8 +3,9 @@ import { Button } from 'reactstrap'
 import React from "react";
 import BudgetTable from './BudgetTable';
 import IncomeIndex from '../Income/IncomeIndex';
+import ExpenseIndex from '../Expense/ExpenseIndex'
 
-const BudgetAccordian = (props) => {
+const BudgetAccordian = (props) => { 
     const textStyles = {
         'textAlign': 'center',
     }
@@ -47,7 +48,7 @@ const BudgetAccordian = (props) => {
                 Expenses
             </Accordion.Header>
                 <Accordion.Body style = {textStyles}>
-                    Insert Table Here
+                    <ExpenseIndex token = {props.sessionToken} />
                 </Accordion.Body>
         </Accordion.Item>
     </Accordion>
