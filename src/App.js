@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 // import ExpenseIndex from './components/Expense/ExpenseIndex'
 // import IncomeIndex from './components/Income/IncomeIndex'
 import BudgetAccordian from './components/Budget/BudgetAccordian'
-import { Button } from 'reactstrap';
+//import { Button } from 'reactstrap';
 import Auth from './components/Auth/Auth';
 import "bootstrap/dist/css/bootstrap.css"
 
@@ -30,7 +30,7 @@ function App() {
 
   const protectedViews = () => {
     return (sessionToken === localStorage.getItem('token') ? 
-    <BudgetAccordian clearToken = {clearToken} />
+    <BudgetAccordian sessionToken = {sessionToken} clearToken = {clearToken} />
     : <Auth updateToken = {updateToken} />)
   }
 

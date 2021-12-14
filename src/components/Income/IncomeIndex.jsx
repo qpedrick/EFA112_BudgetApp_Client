@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import IncomeCreate from './IncomeCreate';
-import IncomeEdit from './IncomeEdit';
+//import IncomeCreate from './IncomeCreate';
+//import IncomeEdit from './IncomeEdit';
 import IncomeTable from './IncomeTable';
 import {Container, Row, Col} from 'reactstrap';
 
@@ -9,7 +9,7 @@ const IncomeIndex = (props) => {
     const [income, setIncome] = useState([]);
 
     const fetchIncome = () =>
-        fetch('http://localhost:6000/income/', {
+        fetch('http://localhost:3001/income/', {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const IncomeIndex = (props) => {
                         Income Create
                     </Col>
                     <Col>
-                        Income Table
+                        <IncomeTable />
                     </Col>
                 </Row>
             </Container>

@@ -17,7 +17,7 @@ const ExpenseCreate = (props) => {
         e.preventDefault();
         fetch(`http://localhost:3001/expense/`, {
             method: 'POST',
-            body: JSON.stringify({expense:
+            body: JSON.stringify(
             {
                 transportation: transportation,
                 housing: housing,
@@ -29,7 +29,7 @@ const ExpenseCreate = (props) => {
                 debt: debt,
                 savings: savings,
                 giving: giving
-            }}),
+            }),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 "Authorization": `Bearer ${props.token}`

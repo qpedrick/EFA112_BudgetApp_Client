@@ -7,7 +7,7 @@ import ExpenseEdit from './ExpenseEdit';
 const ExpenseIndex = (props) => {
     const [expenses, setExpenses] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
-    const [expensesToUpdate, setExpensesToUpdate] = useState({});
+    const [expenseToUpdate, setExpenseToUpdate] = useState({});
     const fetchExpenses = () => {
         fetch('http://localhost:3001/expense', {
         method: 'GET',
@@ -16,15 +16,16 @@ const ExpenseIndex = (props) => {
             'Authorization': `Bearer ${props.token}`
         })
         }).then((res) => res.json())
+        // .then((json) => {console.log(json)})
         .then((expenseData) => {
             setExpenses(expenseData)
-            console.log(expenseData)
+            //console.log(expenseData)
     })
     }
 
 const editUpdateExpense = (expense) => {
-    setExpensesToUpdate(expense);
-    console.log(expense);
+    setExpenseToUpdate(expense);
+    //console.log(expense);
 }
 
 const updateOn = () => {
@@ -37,7 +38,7 @@ const updateOff = () => {
 
 useEffect(() => {
     fetchExpenses();
-})
+}, [])
 
     return(
         <Container>
@@ -49,7 +50,9 @@ useEffect(() => {
                     <ExpenseTable expenses = {expenses} editUpdateExpense = {editUpdateExpense} 
                     updateOn = {updateOn} fetchExpenses = {fetchExpenses} token = {props.token} />
                 </Col>
-                {updateActive ? <ExpenseEdit expensesToUpdate = {expensesToUpdate} updateOff = {updateOff} token = {props.token} fetchExpenses = {fetchExpenses} /> : <></>}
+                {updateActive ? <ExpenseEdit expenseToUpdate = {expenseToUpdate} updateOff = {updateOff} 
+                token = {props.token} fetchExpenses = {fetchExpenses} /> 
+                : <></>}
             </Row>
         </Container>
     )
