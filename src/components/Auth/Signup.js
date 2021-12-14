@@ -24,8 +24,12 @@ const Signup = (props) => {
         .then(
             (res) => res.json()
         ).then((data) => {
+<<<<<<< HEAD
             props.updateToken(data.sessionToken)
             localStorage.setItem('sessionToken', data.sessionToken)
+=======
+            props.updateToken(data.sessionToken);
+>>>>>>> dc1fe87269f4c1cb06629600195bc2597887a697
         })
         .catch(err => console.log(err))
     }

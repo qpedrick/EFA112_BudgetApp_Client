@@ -18,7 +18,7 @@ function App() {
   }, [])
 
   const updateToken = (newToken) => {
-    localStorage.getItem('token', newToken);
+    localStorage.setItem('token', newToken);
     setSessionToken(newToken);
     console.log(newToken);
   }
@@ -29,7 +29,7 @@ function App() {
   // }
 
   const protectedViews = () => {
-    return (sessionToken === localStorage.getItem('token') ? <BudgetAccordian token = {sessionToken} />
+    return (sessionToken === localStorage.getItem('token') ? <Button onClick = {clearToken}>Clear Token</Button>
     : <Auth updateToken = {updateToken} />)
   }
 
