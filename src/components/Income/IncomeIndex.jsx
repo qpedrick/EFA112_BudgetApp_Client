@@ -10,12 +10,12 @@ const IncomeIndex = (props) => {
     const [updateIncomeBudget, setUpdateIncomeBudget] = useState(false);
     const [incomeBudgetToUpdate, setIncomeBudgetToUpdate] = useState([]);
 
-    const fetchIncomes = () => {
-        fetch('http://localhost:3001/income', {
+    const fetchIncome = () => {
+        fetch('http://localhost:3001/income/', {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
-                'Authorization': props.token
+                'Authorization': `Bearer ${props.token}`
             })
         }).then( (res) => res.json())
         .then((incomeData) => {
