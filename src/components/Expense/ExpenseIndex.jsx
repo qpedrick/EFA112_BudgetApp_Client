@@ -18,6 +18,7 @@ const ExpenseIndex = (props) => {
         }).then((res) => res.json())
         .then((expenseData) => {
             setExpenses(expenseData)
+            console.log(expenseData)
     })
     }
 
