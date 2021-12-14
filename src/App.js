@@ -23,10 +23,10 @@ function App() {
     console.log(newToken);
   }
 
-  // const clearToken = () => {
-  //   localStorage.clear();
-  //   setSessionToken('');
-  // }
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
 
   const protectedViews = () => {
     return (sessionToken === localStorage.getItem('token') ? 
