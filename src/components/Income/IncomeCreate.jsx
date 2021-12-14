@@ -30,7 +30,7 @@ const IncomeCreate = (props) => {
 
     return (
         <>
-        <h2>Set Budget</h2>
+        <h2>Input Income</h2>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="paychecks"/>
