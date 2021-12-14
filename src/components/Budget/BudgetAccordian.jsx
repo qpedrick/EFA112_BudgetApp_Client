@@ -16,7 +16,7 @@ const BudgetAccordian = (props) => {
 
     return(
     <div style = {textStyles}>
-    <Accordion>
+    <Accordion defaultActiveKey='0'>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>
                 TotalBudget
