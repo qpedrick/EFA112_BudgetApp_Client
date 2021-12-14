@@ -11,7 +11,7 @@ const IncomeIndex = (props) => {
     const [incomeBudgetToUpdate, setIncomeBudgetToUpdate] = useState([]);
 
     const fetchIncome = () => {
-        fetch('http://localhost:6000/income/', {
+        fetch('http://localhost:3001/income/', {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',

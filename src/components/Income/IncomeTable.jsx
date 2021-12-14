@@ -4,7 +4,7 @@ import { Table, Button } from 'reactstrap';
 const IncomeTable = (props) => {
 
     const deleteIncome = (incomeBudget) => {
-        fetch(`https://localhost:6000/income/${incomeBudget.id}`, {
+        fetch(`https://localhost:3001/income/${incomeBudget.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
