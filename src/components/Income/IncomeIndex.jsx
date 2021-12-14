@@ -15,7 +15,7 @@ const IncomeIndex = (props) => {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
-                'Authorization': props.token
+                'Authorization': `Bearer ${props.token}`
             })
         }).then( (res) => res.json())
         .then((logData) => {
