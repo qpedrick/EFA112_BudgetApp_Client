@@ -16,16 +16,13 @@ const ExpenseIndex = (props) => {
             'Authorization': `Bearer ${props.token}`
         })
         }).then((res) => res.json())
-        // .then((json) => {console.log(json)})
         .then((expenseData) => {
             setExpenses(expenseData)
-            //console.log(expenseData)
     })
     }
 
 const editUpdateExpense = (expense) => {
     setExpenseToUpdate(expense);
-    //console.log(expense);
 }
 
 const updateOn = () => {

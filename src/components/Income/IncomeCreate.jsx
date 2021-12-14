@@ -30,22 +30,26 @@ const IncomeCreate = (props) => {
 
     return (
         <>
-        <h2>Set Budget</h2>
+        <h2>Input Income</h2>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="paychecks"/>
+                <p>Enter paycheck income:</p>
                 <Input name="paychecks" value={paychecks} placeholder="Enter paycheck income" onChange={(e) => setPaychecks(e.target.value)}/>
             </FormGroup>
             <FormGroup>
-            <Label htmlFor="investments"/>
+                <Label htmlFor="investments"/>
+                <p>Enter investments income:</p>
                 <Input name="investments" value={investments} placeholder="Enter investments income" onChange={(e) => setInvestments(e.target.value)}/>
             </FormGroup>
             <FormGroup>
-            <Label htmlFor="reimbursements"/>
+                <Label htmlFor="reimbursements"/>
+                <p>Enter reimbursements income:</p>
                 <Input name="reimbursements" value={reimbursements} placeholder="Enter reimbursements income" onChange={(e) => setReimbursements(e.target.value)}/>
             </FormGroup>
             <FormGroup>
-            <Label htmlFor="misc"/>
+                <Label htmlFor="misc"/>
+                <p>Enter miscellaneous income:</p>
                 <Input name="misc" value={misc} placeholder="Enter miscellaneous income" onChange={(e) => setMisc(e.target.value)}/>
             </FormGroup>
             <Button type="submit" >Submit</Button>
