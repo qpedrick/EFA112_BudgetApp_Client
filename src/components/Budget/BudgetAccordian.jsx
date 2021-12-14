@@ -19,7 +19,7 @@ const BudgetAccordian = (props) => {
     <Accordion>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>
-                TotalBudget
+                Total Budget
             </Accordion.Header>
                 <Accordion.Body style = {textStyles}>
                     <BudgetTable />
