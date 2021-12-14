@@ -9,14 +9,14 @@ const IncomeCreate = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3001/income/', {
+        fetch('http://localhost:3001/income/create', {
             method: 'POST',
             body: JSON.stringify({income: {paychecks: paychecks, investments: investments, reimbursements: reimbursements, misc: misc}}),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.token
+                'Authorization': `Bearer ${props.token}`
             })
-        }).then((res) => res.json())
+        }).then((res) => console.log(res.json()))
         .then((logData) => {
             console.log(logData);
             setPaychecks('');
