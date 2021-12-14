@@ -3,28 +3,30 @@ import { Table, Button } from 'reactstrap';
 
 const IncomeTable = (props) => {
 
-    const deleteIncome = (incomebudget) => {
-        fetch(`https://localhost:3001/income/${incomebudget.id}`, {
+    const deleteIncome = (incomeBudget) => {
+        fetch(`https://localhost:3001/income/${incomeBudget.id}`, {
+
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.token
+                'Authorization': `Bearer ${props.token}`
             })
         })
-        .then(() => props.fetchIncome())
+        .then(() => props.fetchIncomes())
     }
 
     const incomeMapper = () => {
-        return props.incomebudget.map((incomebudget, index) => {
+        return props.incomeBudgets.map((incomeBudget, index) => {
             return(
                 <tr key={index}>
-                    <th scope="row">{incomebudget.id}</th>
-                    <td>{incomebudget.Paychecks}</td>
-                    <td>{incomebudget.Investments}</td>
-                    <td>{incomebudget.Reimbursements}</td>
-                    <td>{incomebudget.Misc}</td>
+                    <th scope="row">{incomeBudget.id}</th>
+                    <td>{incomeBudget.Paychecks}</td>
+                    <td>{incomeBudget.Investments}</td>
+                    <td>{incomeBudget.Reimbursements}</td>
+                    <td>{incomeBudget.Misc}</td>
                     <td>
-                        <Button color="danger" onClick={() => {deleteIncome(incomebudget)}}>Delete Budget</Button>
+                        <Button color="warning" onClick={() => {props.editUpdateIncomeBudget(incomeBudget); props.updateOn()}}>Update Budget</Button>
+                        <Button color="danger" onClick={() => {deleteIncome(incomeBudget)}}>Delete Budget</Button>
                     </td>
                 </tr>
             )
@@ -34,9 +36,11 @@ const IncomeTable = (props) => {
     return(
         <>
         <h2>Budget</h2>
+        <hr />
         <Table>
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>Paychecks</th>
                     <th>Investments</th>
                     <th>Reimbursements</th>
