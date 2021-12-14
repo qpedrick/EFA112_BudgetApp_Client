@@ -29,7 +29,8 @@ function App() {
   // }
 
   const protectedViews = () => {
-    return (sessionToken === localStorage.getItem('token') ? <Button onClick = {clearToken}>Clear Token</Button>
+    return (sessionToken === localStorage.getItem('token') ? 
+    <BudgetAccordian clearToken = {clearToken} />
     : <Auth updateToken = {updateToken} />)
   }
 

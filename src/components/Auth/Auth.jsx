@@ -7,6 +7,7 @@ const Auth = (props) => {
     const styles = {
         'textAlign': 'center',
     }
+    
     return(
         <Container className = 'auth-container'>
             <h1 style = {styles}>Plan Your Budget</h1>

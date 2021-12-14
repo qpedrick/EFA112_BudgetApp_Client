@@ -45,7 +45,7 @@ const Signup = (props) => {
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor = 'password'>Password</Label>
-                    <Input onChange = {(e) => setPassword(e.target.value)} type = 'password' name = 'password' placeholder = 'enter password here!' value = {password} />
+                    <Input onChange = {(e) => setPassword(e.target.value)} type = 'password' name = 'password' placeholder = 'enter password here!' value = {password} minLength = '5' />
                 </FormGroup>
                 <Button type = 'submit'>Sign Up!</Button>
             </Form>
