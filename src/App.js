@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 // import ExpenseIndex from './components/Expense/ExpenseIndex'
 // import IncomeIndex from './components/Income/IncomeIndex'
 import BudgetAccordian from './components/Budget/BudgetAccordian'
-
 import { Button } from 'reactstrap';
 import Auth from './components/Auth/Auth';
 import "bootstrap/dist/css/bootstrap.css"
