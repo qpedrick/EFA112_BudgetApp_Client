@@ -3,28 +3,28 @@ import { Table, Button } from 'reactstrap';
 
 const IncomeTable = (props) => {
 
-    const deleteIncome = (incomebudget) => {
-        fetch(`https://localhost:3001/income/${incomebudget.id}`, {
+    const deleteIncome = (income) => {
+        fetch(`https://localhost:3001/income/${income.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.token
+                'Authorization': `Bearer ${props.token}`
             })
         })
-        .then(() => props.fetchIncome())
+        .then(() => props.fetchIncomes())
     }
 
     const incomeMapper = () => {
-        return props.incomebudget.map((incomebudget, index) => {
+        return props.incomes.map((income, index) => {
             return(
                 <tr key={index}>
-                    <th scope="row">{incomebudget.id}</th>
-                    <td>{incomebudget.Paychecks}</td>
-                    <td>{incomebudget.Investments}</td>
-                    <td>{incomebudget.Reimbursements}</td>
-                    <td>{incomebudget.Misc}</td>
+                    <th scope="row">{income.id}</th>
+                    <td>{income.Paychecks}</td>
+                    <td>{income.Investments}</td>
+                    <td>{income.Reimbursements}</td>
+                    <td>{income.Misc}</td>
                     <td>
-                        <Button color="danger" onClick={() => {deleteIncome(incomebudget)}}>Delete Budget</Button>
+                        <Button color="danger" onClick={() => {deleteIncome(income)}}>Delete</Button>
                     </td>
                 </tr>
             )

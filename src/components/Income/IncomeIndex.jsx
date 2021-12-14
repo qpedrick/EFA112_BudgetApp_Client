@@ -6,22 +6,22 @@ import {Container, Row, Col} from 'reactstrap';
 
 const IncomeIndex = (props) => {
 
-    const [income, setIncome] = useState([]);
+    const [incomes, setIncomes] = useState([]);
 
-    const fetchIncome = () =>
+    const fetchIncomes = () =>
         fetch('http://localhost:3001/income/', {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
-                'Authorization': props.token
+                'Authorization': `Bearer ${props.token}`
             })
         }).then( (res) => res.json())
-        .then((logData) => {
-            setIncome(logData)
+        .then((incomeData) => {
+            setIncomes(incomeData)
         })
 
         useEffect(() => {
-            fetchIncome();
+            fetchIncomes();
         }, [])
 
         return(
@@ -31,7 +31,7 @@ const IncomeIndex = (props) => {
                         Income Create
                     </Col>
                     <Col>
-                        <IncomeTable />
+                        <IncomeTable incomes = {incomes} fetchIncomes = {fetchIncomes} token = {props.token}/>
                     </Col>
                 </Row>
             </Container>
