@@ -6,9 +6,11 @@ import {Container, Row, Col} from 'reactstrap';
 
 const IncomeIndex = (props) => {
 
-    const [income, setIncome] = useState([]);
+    const [incomeBudget, setIncomeBudget] = useState([]);
+    const [updateIncomeBudget, setUpdateIncomeBudget] = useState(false);
+    const [incomeBudgetToUpdate, setIncomeBudgetToUpdate] = useState([]);
 
-    const fetchIncome = () =>
+    const fetchIncome = () => {
         fetch('http://localhost:6000/income/', {
             method: 'GET',
             headers: new Headers ({
@@ -17,8 +19,22 @@ const IncomeIndex = (props) => {
             })
         }).then( (res) => res.json())
         .then((logData) => {
-            setIncome(logData)
+            setIncomeBudget(logData)
         })
+    }
+
+        const editUpdateIncomeBudget = (incomeBudget) => {
+            setIncomeBudgetToUpdate(incomeBudget);
+            console.log(incomeBudget);
+        }
+
+        const updateOn = () => {
+            setUpdateIncomeBudget(true);
+        }
+
+        const updateOff = () => {
+            setUpdateIncomeBudget(false);
+        }
 
         useEffect(() => {
             fetchIncome();
@@ -28,11 +44,12 @@ const IncomeIndex = (props) => {
             <Container>
                 <Row>
                     <Col m="3">
-                        Income Create
+                        <IncomeCreate fetchIncome={fetchIncome} token={props.token}/>
                     </Col>
-                    <Col>
-                        Income Table
+                    <Col md="3">
+                        <IncomeTable incomeBudget={incomeBudget} editUpdateIncomeBudget={editUpdateIncomeBudget} updateOn={updateOn} fetchIncome={fetchIncome} token={props.token}/>
                     </Col>
+                    {updateIncomeBudget ? <IncomeEdit incomeBudgetToUpdate={incomeBudgetToUpdate} updateOff={updateOff} token={props.token} fetchIncome={fetchIncome}/> : <> </>}
                 </Row>
             </Container>
         )

@@ -3,8 +3,8 @@ import { Table, Button } from 'reactstrap';
 
 const IncomeTable = (props) => {
 
-    const deleteIncome = (incomebudget) => {
-        fetch(`https://localhost:6000/income/${incomebudget.id}`, {
+    const deleteIncome = (incomeBudget) => {
+        fetch(`https://localhost:6000/income/${incomeBudget.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -15,16 +15,17 @@ const IncomeTable = (props) => {
     }
 
     const incomeMapper = () => {
-        return props.incomebudgets.map((incomebudget, index) => {
+        return props.incomeBudget.map((incomeBudget, index) => {
             return(
                 <tr key={index}>
-                    <th scope="row">{incomebudget.id}</th>
-                    <td>{incomebudget.Paychecks}</td>
-                    <td>{incomebudget.Investments}</td>
-                    <td>{incomebudget.Reimbursements}</td>
-                    <td>{incomebudget.Misc}</td>
+                    <th scope="row">{incomeBudget.id}</th>
+                    <td>{incomeBudget.Paychecks}</td>
+                    <td>{incomeBudget.Investments}</td>
+                    <td>{incomeBudget.Reimbursements}</td>
+                    <td>{incomeBudget.Misc}</td>
                     <td>
-                        <Button color="danger" onClick={() => {deleteIncome(incomebudget)}}>Delete Budget</Button>
+                        <Button color="warning" onClick={() => {props.editUpdateIncomeBudget(incomeBudget); props.updateOn()}}>Update Budget</Button>
+                        <Button color="danger" onClick={() => {deleteIncome(incomeBudget)}}>Delete Budget</Button>
                     </td>
                 </tr>
             )
