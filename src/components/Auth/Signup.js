@@ -24,7 +24,7 @@ const Signup = (props) => {
         .then(
             (res) => res.json()
         ).then((data) => {
-            props.updateToken(data.sessionToken)
+            props.updateToken(data.sessionToken);
         })
         .catch(err => console.log(err))
     }
