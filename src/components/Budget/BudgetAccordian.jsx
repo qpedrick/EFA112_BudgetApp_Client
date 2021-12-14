@@ -1,6 +1,7 @@
 import Accordion from 'react-bootstrap/Accordion'
 import { Button } from 'reactstrap'
 import React from "react";
+import BudgetTable from './BudgetTable';
 
 const BudgetAccordian = (props) => {
     const textStyles = {
@@ -19,7 +20,7 @@ const BudgetAccordian = (props) => {
                 TotalBudget
             </Accordion.Header>
                 <Accordion.Body style = {textStyles}>
-                    Insert Table Here
+                    <BudgetTable />
                 </Accordion.Body>
         </Accordion.Item>
     </Accordion>
