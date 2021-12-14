@@ -13,21 +13,21 @@ const ExpenseTable = (props) => {
         .then(() => props.fetchExpenses())
     }
 
-    const ExpenseMapper = () => {
+    const expenseMapper = () => {
         return props.expenses.map((expense, index) => {
             return(
                 <tr key = {index}>
                     <th scope = 'row'>{expense.id}</th>
-                    <td>{expense.transportation}</td>
-                    <td>{expense.housing}</td>
-                    <td>{expense.food}</td>
-                    <td>{expense.personalCare}</td>
-                    <td>{expense.lifestyle}</td>
-                    <td>{expense.health}</td>
-                    <td>{expense.insurance}</td>
-                    <td>{expense.debt}</td>
-                    <td>{expense.savings}</td>
-                    <td>{expense.giving}</td>
+                    <td>{expense.Transportation}</td>
+                    <td>{expense.Housing}</td>
+                    <td>{expense.Food}</td>
+                    <td>{expense.PersonalCare}</td>
+                    <td>{expense.Lifestyle}</td>
+                    <td>{expense.Health}</td>
+                    <td>{expense.Insurance}</td>
+                    <td>{expense.Debt}</td>
+                    <td>{expense.Savings}</td>
+                    <td>{expense.Giving}</td>
                     <td>
                         <Button color = 'warning' onClick = {() => {props.editUpdateExpense(expense); props.updateOn()}}>Update</Button>
                         <Button color = 'danger' onClick = {() => {deleteExpense(expense)}}>Delete</Button>
@@ -58,7 +58,7 @@ const ExpenseTable = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {ExpenseMapper()}
+                {expenseMapper()}
             </tbody>
         </Table>
         </>

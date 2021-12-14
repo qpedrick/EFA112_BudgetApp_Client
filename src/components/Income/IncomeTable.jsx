@@ -4,7 +4,7 @@ import { Table, Button } from 'reactstrap';
 const IncomeTable = (props) => {
 
     const deleteIncome = (incomebudget) => {
-        fetch(`https://localhost:6000/income/${incomebudget.id}`, {
+        fetch(`https://localhost:3001/income/${incomebudget.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -15,7 +15,7 @@ const IncomeTable = (props) => {
     }
 
     const incomeMapper = () => {
-        return props.incomebudgets.map((incomebudget, index) => {
+        return props.incomebudget.map((incomebudget, index) => {
             return(
                 <tr key={index}>
                     <th scope="row">{incomebudget.id}</th>
