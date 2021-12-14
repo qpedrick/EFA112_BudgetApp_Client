@@ -6,11 +6,9 @@ import { Container, Row, Col } from 'reactstrap';
 
 const IncomeIndex = (props) => {
 
-    const [incomeBudgets, setIncomeBudgets] = useState([]);
-    const [updateIncomeBudget, setUpdateIncomeBudget] = useState(false);
-    const [incomeBudgetToUpdate, setIncomeBudgetToUpdate] = useState({});
+    const [incomes, setIncomes] = useState([]);
 
-    const fetchIncomes = () => {
+    const fetchIncomes = () =>
         fetch('http://localhost:3001/income/', {
             method: 'GET',
             headers: new Headers ({
@@ -19,8 +17,7 @@ const IncomeIndex = (props) => {
             })
         }).then( (res) => res.json())
         .then((incomeData) => {
-            //console.log(incomeData)
-            setIncomeBudgets(incomeData)
+            setIncomes(incomeData)
         })
     }
 
