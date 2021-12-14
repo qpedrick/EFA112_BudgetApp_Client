@@ -2,18 +2,18 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import Signup from "./Signup";
 import Login from "./Login";
-import './auth.css'
 
 const Auth = (props) => {
     const styles = {
-        'text-align': 'center',
+        'textAlign': 'center',
     }
+    
     return(
         <Container className = 'auth-container'>
             <h1 style = {styles}>Plan Your Budget</h1>
             <Row>
                 <Col md = '4' className = 'signup-col' style = {styles}>
-                    <Signup />
+                    <Signup updateToken = {props.updateToken} />
                 </Col>
                 <Col md = '4' className = 'description-col' style = {styles}>
                     <br/>
@@ -24,7 +24,7 @@ const Auth = (props) => {
                 Using this application you can track expenses and income and see the totals displayed against each other.
                 </Col>
                 <Col md = '4' className = 'login-col' style = {styles}>
-                    <Login />
+                    <Login updateToken = {props.updateToken} />
                 </Col>
             </Row>
         </Container>
