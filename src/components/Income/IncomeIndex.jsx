@@ -5,10 +5,10 @@ import IncomeTable from './IncomeTable';
 import { Container, Row, Col } from 'reactstrap';
 
 const IncomeIndex = (props) => {
-
-    const [incomes, setIncomes] = useState([]);
-
-    const fetchIncomes = () =>
+    const [incomeBudgets, setIncomeBudgets] = useState([]);
+    const [updateIncomeBudget, setUpdateIncomeBudget] = useState(false);
+    const [incomeBudgetToUpdate, setIncomeBudgetToUpdate] = useState({});
+    const fetchIncomes = () => {
         fetch('http://localhost:3001/income/', {
             method: 'GET',
             headers: new Headers ({
@@ -17,9 +17,10 @@ const IncomeIndex = (props) => {
             })
         }).then( (res) => res.json())
         .then((incomeData) => {
-            setIncomes(incomeData)
+            setIncomeBudgets(incomeData)
         })
     }
+
 
         const editUpdateIncomeBudget = (incomeBudget) => {
             setIncomeBudgetToUpdate(incomeBudget);
@@ -51,6 +52,6 @@ const IncomeIndex = (props) => {
                 </Row>
             </Container>
         )
-}
+        }
 
 export default IncomeIndex;
