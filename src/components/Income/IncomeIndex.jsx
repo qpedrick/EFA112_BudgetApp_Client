@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import IncomeCreate from './IncomeCreate';
 import IncomeEdit from './IncomeEdit';
-import React, {useState, useEffect} from 'react';
 import IncomeTable from './IncomeTable';
 import { Container, Row, Col } from 'reactstrap';
 
