@@ -25,6 +25,7 @@ const Signup = (props) => {
             (res) => res.json()
         ).then((data) => {
             props.updateToken(data.sessionToken)
+            localStorage.setItem('sessionToken', data.sessionToken)
         })
         .catch(err => console.log(err))
     }
@@ -36,7 +37,7 @@ const Signup = (props) => {
             <Form onSubmit = {handleSubmit}>
                 <FormGroup>
                     <Label htmlFor = 'email'>Email</Label>
-                    <Input onChange = {(e) => setEmail(e.target.value)} type = 'email' name = 'email' placeholder = 'enter email here!' value = {email} />
+                    <Input onChange = {(e) => setEmail(e.target.value)} type= 'email' placeholder = 'enter email here!' value = {email} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor = 'password'>Password</Label>

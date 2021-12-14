@@ -20,12 +20,13 @@ function App() {
   const updateToken = (newToken) => {
     localStorage.getItem('token', newToken);
     setSessionToken(newToken);
+    console.log(newToken);
   }
 
-  const clearToken = () => {
-    localStorage.clear();
-    setSessionToken('');
-  }
+  // const clearToken = () => {
+  //   localStorage.clear();
+  //   setSessionToken('');
+  // }
 
   const protectedViews = () => {
     return (sessionToken === localStorage.getItem('token') ? <BudgetAccordian token = {sessionToken} />
