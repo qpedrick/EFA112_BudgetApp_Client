@@ -18,7 +18,7 @@ const Description = () => {
                     Select the Actual Expense tab and log your expenses. You can also update and delete logged expenses.
                 </p>
                 <p>
-                    Back to top of the page and select the Total Budget tab. Put your Budget Income/Expenses and press Get Actual Income/Expenses Values. 
+                    Back to top of the page and select the Total Budget tab. Add your Budget Income/Expenses and press Get Actual Income/Expenses Values to calculate for results. 
                 </p>
                 <p>
                     Results will render under Budget-To-Actuals
