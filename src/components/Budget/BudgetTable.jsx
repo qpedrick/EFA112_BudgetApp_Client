@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from 'reactstrap';
+import IncomeTable from '../Income/IncomeTable';
 
 const BudgetTable = (props) => {
     return(
@@ -21,7 +22,6 @@ const BudgetTable = (props) => {
                 </tr>
             </thead>
             <tbody>
-
             </tbody>
         </Table>
         <br />
