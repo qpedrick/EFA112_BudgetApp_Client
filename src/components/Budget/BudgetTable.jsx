@@ -49,8 +49,7 @@ const BudgetTable = (props) => {
     }
 }
 
-
-    return(
+    return (
         <Container>
             <Row>
                 <h3>View Full Budget</h3>
