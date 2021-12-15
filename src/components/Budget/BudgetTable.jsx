@@ -140,7 +140,7 @@ const BudgetTable = (props) => {
             <br/>
             <br/>
             <Row>
-                <Button onClick = {getIncome}>Get Actual Income Values</Button>
+                <Button color="dark" onClick = {getIncome}>Get Actual Income Values</Button>
             </Row> 
             <br/>
             <br/>
@@ -233,7 +233,7 @@ const BudgetTable = (props) => {
             <br/>
             <br/>
             <Row>
-                <Button onClick = {getExpenses}>Get Actual Expense Values</Button>
+                <Button color="dark" onClick = {getExpenses}>Get Actual Expense Values</Button>
             </Row> 
             <br/>
             <br/>

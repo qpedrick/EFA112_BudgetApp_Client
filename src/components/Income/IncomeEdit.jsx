@@ -43,7 +43,7 @@ const IncomeEdit = (props) => {
                     <Label htmlFor="misc">Edit Misc:</Label>
                         <Input name="misc" value={editMisc} onChange={(event) => setEditMisc(event.target.value)} placeholder= "Misc"/>
                     </FormGroup>
-                <Button type="submit">Submit Updated Income</Button>
+                <Button color="dark" type="submit">Submit Updated Income</Button>
             </Form>
             </ModalBody>
         </Modal>

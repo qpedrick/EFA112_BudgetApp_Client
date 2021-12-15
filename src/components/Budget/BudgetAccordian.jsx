@@ -4,6 +4,8 @@ import React from "react";
 import BudgetTable from './BudgetTable';
 import IncomeIndex from '../Income/IncomeIndex';
 import ExpenseIndex from '../Expense/ExpenseIndex'
+import Footer from '../Site/Footer'
+import './Budget.css'
 
 const BudgetAccordian = (props) => { 
     const textStyles = {
@@ -16,7 +18,7 @@ const BudgetAccordian = (props) => {
 
     return(
     <div style = {textStyles}>
-    <Accordion defaultActiveKey='0'>
+    <Accordion defaultActiveKey='0' flush>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>
                 Total Budget
@@ -29,7 +31,7 @@ const BudgetAccordian = (props) => {
 
     <br />
 
-    <Accordion>
+    <Accordion flush>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>
                 Actual Income
@@ -42,7 +44,7 @@ const BudgetAccordian = (props) => {
 
     <br />
 
-    <Accordion>
+    <Accordion flush>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>
                 Actual Expenses
@@ -55,8 +57,8 @@ const BudgetAccordian = (props) => {
 
     <br />
 
-    <Button style = {buttonStyles} onClick = {props.clearToken}>Logout</Button>
-
+    <Button color="dark" style = {buttonStyles} onClick = {props.clearToken}>Logout</Button>
+    <Footer/>
     </div>
     )}
 
