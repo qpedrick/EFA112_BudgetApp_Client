@@ -3,7 +3,8 @@ import { Table, Button, Form, FormGroup, Label, Input, Container, Row, Col } fro
 import IncomeTable from '../Income/IncomeTable';
 
 const BudgetTable = (props) => {
-    const [actualValues, setActualValues] = useState([]);
+    const [actualIncomeValues, setActualIncomeValues] = useState([]);
+    const [actualExpenseValues, setActualExpenseValues] = useState([]);
 
     const formStyle = {
         "min-width": "100%",
@@ -23,8 +24,21 @@ const BudgetTable = (props) => {
                 'Authorization': `Bearer ${props.token}`
             })
         }).then((res) => res.json())
-            .then(res => setActualValues(res[0]))
-            .then(console.log(actualValues))
+            .then(res => setActualIncomeValues(res[0]))
+            .then(console.log(actualIncomeValues))
+            .catch(err => console.log(err))
+    }
+
+    const getExpense = () => {
+        fetch('http://localhost:3001/expense/', {
+            method: 'GET',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${props.token}`
+            })
+        }).then((res) => res.json())
+            .then(res => setActualExpenseValues(res[0]))
+            .then(console.log(actualExpenseValues))
             .catch(err => console.log(err))
     }
 
@@ -50,16 +64,19 @@ const BudgetTable = (props) => {
                         </thead>
                         <td>
                             Paychecks:
-
+                            {actualIncomeValues.Paychecks}
                             <br />
                             <br />
                             Investments:
+                            {actualIncomeValues.Investments}
                             <br />
                             <br />
                             Reimbursements:
+                            {actualIncomeValues.Reimbursements}
                             <br />
                             <br />
                             Misc:
+                            {actualIncomeValues.Misc}
                             <br />
                             <br />
                         </td>
@@ -82,35 +99,46 @@ const BudgetTable = (props) => {
         </thead>
         <tbody>
             Transportation:
+            {actualExpenseValues.Transportation}
             <br />
             <br />
             Housing:
+            {actualExpenseValues.Housing}
             <br />
             <br />
             Food:
+            {actualExpenseValues.Food}
             <br />
             <br />
             Personal Care:
+            {actualExpenseValues.PersonalCare}
             <br />
             <br />
             Lifestyle:
+            {actualExpenseValues.Lifestyle}
             <br />
             <br />
             Health:
+            {actualExpenseValues.Health}
             <br />
             <br />
             Insurance:
+            {actualExpenseValues.Insurance}
             <br />
             <br />
             Debt:
+            {actualExpenseValues.Debt}
             <br />
             <br />
             Savings:
+            {actualExpenseValues.Savings}
             <br />
             <br />
             Giving:
+            {actualExpenseValues.Giving}
             <br />
             <br />
+            <Button onClick={getExpense}>Get Actual Expense Values</Button>
         </tbody>
     </Table>
         
