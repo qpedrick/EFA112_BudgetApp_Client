@@ -3,8 +3,10 @@ import { Table, Button, Form, FormGroup, Label, Input, Container, Row, Col } fro
 import IncomeTable from '../Income/IncomeTable';
 
 const BudgetTable = (props) => {
-    const [actualIncomeValues, setActualIncomeValues] = useState([]);
-    const [actualExpenseValues, setActualExpenseValues] = useState([]);
+    const [paycheckTotal, setPaycheckTotal] = useState(0);
+    const [investmentTotal, setInvestmentTotal] = useState(0);
+    const [reimbursementTotal, setReimbursementTotal] = useState(0);
+    const [miscTotal, setMiscTotal] = useState(0);
 
     const formStyle = {
         "min-width": "100%",
@@ -24,22 +26,26 @@ const BudgetTable = (props) => {
                 'Authorization': `Bearer ${props.token}`
             })
         }).then((res) => res.json())
-            .then(res => setActualIncomeValues(res[0]))
-            .then(console.log(actualIncomeValues))
+            .then(res => addIncome(res))
             .catch(err => console.log(err))
     }
 
-    const getExpense = () => {
-        fetch('http://localhost:3001/expense/', {
-            method: 'GET',
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${props.token}`
-            })
-        }).then((res) => res.json())
-            .then(res => setActualExpenseValues(res[0]))
-            .then(console.log(actualExpenseValues))
-            .catch(err => console.log(err))
+
+    const addIncome = (res) => {
+        let pTotal = 0;
+        let iTotal = 0;
+        let rTotal = 0;
+        let mTotal = 0;
+        for(let object of res){
+            pTotal +=  object.Paychecks;
+            setPaycheckTotal(pTotal)
+            iTotal +=  object.Investments;
+            setInvestmentTotal(iTotal)
+            rTotal +=  object.Reimbursements;
+            setReimbursementTotal(rTotal)
+            mTotal +=  object.Misc;
+            setMiscTotal(mTotal)
+        }
     }
 
     return (
@@ -52,7 +58,6 @@ const BudgetTable = (props) => {
                 <hr />
                 <Button onClick={getIncome}>Get Actual Income Values</Button>
 
-
                 <Col m="3">
                     <Table>
                         <thead>
@@ -63,20 +68,20 @@ const BudgetTable = (props) => {
                             </tr>
                         </thead>
                         <td>
-                            Paychecks:
-                            {actualIncomeValues.Paychecks}
+                            Paychecks: 
+                            {` ${paycheckTotal}`}
                             <br />
                             <br />
-                            Investments:
-                            {actualIncomeValues.Investments}
+                            Investments: 
+                            {` ${investmentTotal}`}
                             <br />
                             <br />
-                            Reimbursements:
-                            {actualIncomeValues.Reimbursements}
+                            Reimbursements: 
+                            {` ${reimbursementTotal}`}
                             <br />
                             <br />
-                            Misc:
-                            {actualIncomeValues.Misc}
+                            Misc: 
+                            {` ${miscTotal}`}
                             <br />
                             <br />
                         </td>
@@ -99,46 +104,35 @@ const BudgetTable = (props) => {
         </thead>
         <tbody>
             Transportation:
-            {actualExpenseValues.Transportation}
             <br />
             <br />
             Housing:
-            {actualExpenseValues.Housing}
             <br />
             <br />
             Food:
-            {actualExpenseValues.Food}
             <br />
             <br />
             Personal Care:
-            {actualExpenseValues.PersonalCare}
             <br />
             <br />
             Lifestyle:
-            {actualExpenseValues.Lifestyle}
             <br />
             <br />
             Health:
-            {actualExpenseValues.Health}
             <br />
             <br />
             Insurance:
-            {actualExpenseValues.Insurance}
             <br />
             <br />
             Debt:
-            {actualExpenseValues.Debt}
             <br />
             <br />
             Savings:
-            {actualExpenseValues.Savings}
             <br />
             <br />
             Giving:
-            {actualExpenseValues.Giving}
             <br />
             <br />
-            <Button onClick={getExpense}>Get Actual Expense Values</Button>
         </tbody>
     </Table>
         
