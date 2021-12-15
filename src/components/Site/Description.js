@@ -15,7 +15,7 @@ const Description = () => {
                     Select the Actual Income tab and log your incomes. You can also update and delete logged incomes.
                 </p>
                 <p>
-                    Select the Actual Expense tab and log your expenses. You can also update and delete logged incomes.
+                    Select the Actual Expense tab and log your expenses. You can also update and delete logged expenses.
                 </p>
                 <p>
                     Back to top of the page and select the Total Budget tab. Put your Budget Income/Expenses and press Get Actual Income/Expenses Values. 
