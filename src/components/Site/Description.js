@@ -6,7 +6,7 @@ const Description = () => {
 
         <div className = 'main'>
             <div className = 'mainDiv'>
-                <h1>Welcome to our Budget App!</h1>
+                <h1>Welcome to Your Budget App!</h1>
                 <br/>
                 <p>
                     To begin, close the Total Budget Tab.
