@@ -32,7 +32,7 @@ const BudgetAccordian = (props) => {
     <Accordion>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>
-                Income
+                Actual Income
             </Accordion.Header>
                 <Accordion.Body style = {textStyles}>
                     <IncomeIndex token = {props.sessionToken} />
@@ -45,7 +45,7 @@ const BudgetAccordian = (props) => {
     <Accordion>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>
-                Expenses
+                Actual Expenses
             </Accordion.Header>
                 <Accordion.Body style = {textStyles}>
                     <ExpenseIndex token = {props.sessionToken} />
