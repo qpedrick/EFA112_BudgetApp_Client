@@ -20,6 +20,7 @@ const Auth = (props) => {
         }
     }
 
+
     return (
         <Container className='auth-container'>
 
@@ -27,6 +28,7 @@ const Auth = (props) => {
                 {toggle ? <Login updateToken={props.updateToken} /> : <Signup updateToken={props.updateToken} />}
                 <Col>
                 <Button outline color="dark" className="button"  onClick={handleToggle}>{loginOrRegister}</Button>
+
                 </Col>
             </Row>
 

@@ -16,10 +16,10 @@ const BudgetAccordian = (props) => {
 
     return(
     <div style = {textStyles}>
-    <Accordion>
+    <Accordion defaultActiveKey='0'>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>
-                TotalBudget
+                Total Budget
             </Accordion.Header>
                 <Accordion.Body style = {textStyles}>
                     <BudgetTable />
@@ -32,10 +32,10 @@ const BudgetAccordian = (props) => {
     <Accordion>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>
-                Income
+                Actual Income
             </Accordion.Header>
                 <Accordion.Body style = {textStyles}>
-                    <IncomeIndex token={props.sessionToken}/>
+                    <IncomeIndex token = {props.sessionToken} />
                 </Accordion.Body>
         </Accordion.Item>
     </Accordion>
@@ -45,7 +45,7 @@ const BudgetAccordian = (props) => {
     <Accordion>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>
-                Expenses
+                Actual Expenses
             </Accordion.Header>
                 <Accordion.Body style = {textStyles}>
                     <ExpenseIndex token = {props.sessionToken} />

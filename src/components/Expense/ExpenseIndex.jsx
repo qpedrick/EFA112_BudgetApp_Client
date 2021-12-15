@@ -16,16 +16,13 @@ const ExpenseIndex = (props) => {
             'Authorization': `Bearer ${props.token}`
         })
         }).then((res) => res.json())
-        // .then((json) => {console.log(json)})
         .then((expenseData) => {
             setExpenses(expenseData)
-            //console.log(expenseData)
     })
     }
 
 const editUpdateExpense = (expense) => {
     setExpenseToUpdate(expense);
-    //console.log(expense);
 }
 
 const updateOn = () => {
@@ -46,7 +43,7 @@ useEffect(() => {
                 <Col md = '3'>
                     <ExpenseCreate fetchExpenses = {fetchExpenses} token = {props.token} />
                 </Col>
-                <Col md = '9'>
+                <Col md = '11'>
                     <ExpenseTable expenses = {expenses} editUpdateExpense = {editUpdateExpense} 
                     updateOn = {updateOn} fetchExpenses = {fetchExpenses} token = {props.token} />
                 </Col>

@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
 const IncomeCreate = (props) => {
-    const [paychecks, setPaychecks] = useState('');
-    const [investments, setInvestments] = useState('');
-    const [reimbursements, setReimbursements] = useState('');
-    const [misc, setMisc] = useState('');
+    const [paychecks, setPaychecks] = useState(0);
+    const [investments, setInvestments] = useState(0);
+    const [reimbursements, setReimbursements] = useState(0);
+    const [misc, setMisc] = useState(0);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,10 +19,10 @@ const IncomeCreate = (props) => {
         }).then((res) => res.json())
         .then((incomeData) => {
             console.log(incomeData);
-            setPaychecks('');
-            setInvestments('');
-            setReimbursements('');
-            setMisc('');
+            setPaychecks(0);
+            setInvestments(0);
+            setReimbursements(0);
+            setMisc(0);
             props.fetchIncomes();
         })
         .catch(err => console.log(err))
@@ -30,25 +30,29 @@ const IncomeCreate = (props) => {
 
     return (
         <>
-        <h2>Set Budget</h2>
+        <h2>Log Income</h2>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="paychecks"/>
+                <p>Enter paycheck income:</p>
                 <Input name="paychecks" value={paychecks} placeholder="Enter paycheck income" onChange={(e) => setPaychecks(e.target.value)}/>
             </FormGroup>
             <FormGroup>
-            <Label htmlFor="investments"/>
+                <Label htmlFor="investments"/>
+                <p>Enter investments income:</p>
                 <Input name="investments" value={investments} placeholder="Enter investments income" onChange={(e) => setInvestments(e.target.value)}/>
             </FormGroup>
             <FormGroup>
-            <Label htmlFor="reimbursements"/>
+                <Label htmlFor="reimbursements"/>
+                <p>Enter reimbursements income:</p>
                 <Input name="reimbursements" value={reimbursements} placeholder="Enter reimbursements income" onChange={(e) => setReimbursements(e.target.value)}/>
             </FormGroup>
             <FormGroup>
-            <Label htmlFor="misc"/>
+                <Label htmlFor="misc"/>
+                <p>Enter miscellaneous income:</p>
                 <Input name="misc" value={misc} placeholder="Enter miscellaneous income" onChange={(e) => setMisc(e.target.value)}/>
             </FormGroup>
-            <Button type="submit" >Submit</Button>
+            <Button type="submit" >Submit Income Report</Button>
         </Form>
         </>
     )

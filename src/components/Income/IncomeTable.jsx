@@ -4,8 +4,7 @@ import { Table, Button } from 'reactstrap';
 const IncomeTable = (props) => {
 
     const deleteIncome = (incomeBudget) => {
-        fetch(`https://localhost:3001/income/${incomeBudget.id}`, {
-
+        fetch(`http://localhost:3001/income/${incomeBudget.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -25,8 +24,8 @@ const IncomeTable = (props) => {
                     <td>{incomeBudget.Reimbursements}</td>
                     <td>{incomeBudget.Misc}</td>
                     <td>
-                        <Button color="warning" onClick={() => {props.editUpdateIncomeBudget(incomeBudget); props.updateOn()}}>Update Budget</Button>
-                        <Button color="danger" onClick={() => {deleteIncome(incomeBudget)}}>Delete Budget</Button>
+                        <Button color="warning" onClick={() => {props.editUpdateIncomeBudget(incomeBudget); props.updateOn()}}>Update Income</Button>
+                        <Button color="danger" onClick={() => {deleteIncome(incomeBudget)}}>Delete Income</Button>
                     </td>
                 </tr>
             )
@@ -35,7 +34,7 @@ const IncomeTable = (props) => {
 
     return(
         <>
-        <h2>Budget</h2>
+        <h2>Income</h2>
         <hr />
         <Table>
             <thead>

@@ -30,6 +30,7 @@ const Signup = (props) => {
     }
 
 
+
     return (
         <Container className="formsContainer">
             <Row>
@@ -48,6 +49,7 @@ const Signup = (props) => {
                 </Form>
             </Row>
         </Container>
+
     )
 }
 
