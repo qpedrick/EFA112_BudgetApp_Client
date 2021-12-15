@@ -5,6 +5,7 @@ import BudgetTable from './BudgetTable';
 import IncomeIndex from '../Income/IncomeIndex';
 import ExpenseIndex from '../Expense/ExpenseIndex'
 import Footer from '../Site/Footer'
+import './Budget.css'
 
 const BudgetAccordian = (props) => { 
     const textStyles = {
