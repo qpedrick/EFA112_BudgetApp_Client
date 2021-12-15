@@ -10,9 +10,7 @@ const BudgetAccordian = (props) => {
         'textAlign': 'center',
     }
 
-    const buttonStyles = {
-        width: '200px'
-    }
+
 
     return(
     <div style = {textStyles}>
@@ -55,7 +53,7 @@ const BudgetAccordian = (props) => {
 
     <br />
 
-    <Button style = {buttonStyles} onClick = {props.clearToken}>Logout</Button>
+    <Button outline color="dark" onClick = {props.clearToken}>Logout</Button>
 
     </div>
     )}

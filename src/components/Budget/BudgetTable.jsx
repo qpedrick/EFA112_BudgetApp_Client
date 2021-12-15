@@ -91,7 +91,7 @@ const BudgetTable = (props) => {
                 <p>Enter miscellaneous income:</p>
                 <Input name="misc" value={misc} placeholder="Enter miscellaneous income" onChange={(e) => setMisc(e.target.value)}/>
             </FormGroup>
-            <Button type="submit" >Submit Budget</Button>
+            <Button  outline color="dark" type="submit" >Submit Budget</Button>
         </Col>
         </td>
             </thead>

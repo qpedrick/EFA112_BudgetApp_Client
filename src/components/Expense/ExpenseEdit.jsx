@@ -88,7 +88,7 @@ const ExpenseEdit = (props) => {
                         <Label htmlFor = 'giving' />
                         <Input name = 'giving' value = {editGiving} onChange={(e) => setEditGiving(e.target.value)} placeholder='giving'/>
                     </FormGroup>
-                    <Button type = 'submit'>Submit Expense Report</Button>
+                    <Button type = 'submit' outline color="dark">Submit Expense Report</Button>
                 </Form>
             </ModalBody>
         </Modal>

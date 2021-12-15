@@ -13,10 +13,10 @@ const Auth = (props) => {
     const handleToggle = () => {
         if (toggle === true) {
             setToggle(false);
-            setLoginOrRegister("Login");
+            setLoginOrRegister("Go to Login");
         } else {
             setToggle(true);
-            setLoginOrRegister("Sign Up");
+            setLoginOrRegister("Go toSign Up");
         }
     }
 

@@ -113,7 +113,7 @@ const ExpenseCreate = (props) => {
                 <p>Enter giving expenses:</p>
                 <Input name = 'giving' value = {giving} onChange={(e) => setGiving(e.target.value)} placeholder='giving'/>
             </FormGroup>
-            <Button type = 'submit'>Submit Expense Report</Button>
+            <Button type = 'submit' outline color="dark">Submit Expense Report</Button>
         </Form>
         </>
     )
