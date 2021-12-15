@@ -39,13 +39,13 @@ const Login = (props) => {
                 <Form onSubmit={handleSubmit} className="removeGap">
                     <FormGroup>
                         <Label htmlFor='email'>Email</Label>
-                        <Input onChange={(e) => setEmail(e.target.value)} value={email} type='email' name='email' placeholder='enter email here!' />
+                        <Input onChange={(e) => setEmail(e.target.value)} value={email} type='email' name='email' placeholder='Email' />
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor='password'>Password</Label>
-                        <Input onChange={(e) => setPassword(e.target.value)} value={password} type='password' name='password' placeholder='enter password here!' />
+                        <Input onChange={(e) => setPassword(e.target.value)} value={password} type='password' name='password' placeholder='Password' />
                     </FormGroup>
-                    <Button type='submit' outline color="dark" className="button">Login!</Button>
+                    <Button type='submit' outline color="dark" className="button">Login</Button>
                 </Form>
             </Row>
         </Container>
