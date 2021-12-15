@@ -35,7 +35,13 @@ const Login = (props) => {
         <Container className='formsContainer'>
             <Row>
                 <h1>Plan Your Budget</h1>
+            </Row>
+            <br/>
+            <Row>
                 <h3>Login</h3>
+            </Row>
+            <br/>
+            <Row>
                 <Form onSubmit={handleSubmit} className="removeGap">
                     <FormGroup>
                         <Label htmlFor='email'>Email</Label>

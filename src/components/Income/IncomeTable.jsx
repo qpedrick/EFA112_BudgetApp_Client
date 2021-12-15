@@ -34,7 +34,7 @@ const IncomeTable = (props) => {
 
     return(
         <>
-        <h2>Income</h2>
+        <h3>Income</h3>
         <hr />
         <Table>
             <thead>

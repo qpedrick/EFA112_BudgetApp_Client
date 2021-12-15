@@ -35,7 +35,13 @@ const Signup = (props) => {
         <Container className="formsContainer">
             <Row>
                 <h1>Plan Your Budget</h1>
+            </Row>
+            <br/>
+            <Row>
                 <h3>Sign Up</h3>
+            </Row>
+            <br/>
+            <Row>
                 <Form onSubmit={handleSubmit}>
                     <FormGroup>
                         <Label htmlFor='email'>Email</Label>

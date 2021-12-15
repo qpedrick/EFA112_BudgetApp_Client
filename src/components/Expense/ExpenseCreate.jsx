@@ -66,52 +66,52 @@ const ExpenseCreate = (props) => {
             <FormGroup>
                 <Label htmlFor = 'transportation' />
                 <p>Enter transportation expenses:</p>
-                <Input name = 'transportation' value = {transportation} onChange={(e) => setTransportation(e.target.value)} placeholder = 'transportation' />
+                <Input name = 'transportation' value = {transportation} onChange={(e) => setTransportation(e.target.value)} placeholder = 'Transportation' />
             </FormGroup>
             <FormGroup>
                 <Label htmlFor = 'housing' />
                 <p>Enter housing expenses:</p>
-                <Input name = 'housing' value = {housing} onChange={(e) => setHousing(e.target.value)} placeholder='housing'/>
+                <Input name = 'housing' value = {housing} onChange={(e) => setHousing(e.target.value)} placeholder='Housing'/>
             </FormGroup>
             <FormGroup>
                 <Label htmlFor = 'food' />
                 <p>Enter food expenses:</p>
-                <Input name = 'food' value = {food} onChange={(e) => setFood(e.target.value)} placeholder='food'/>
+                <Input name = 'food' value = {food} onChange={(e) => setFood(e.target.value)} placeholder='Food'/>
             </FormGroup>
             <FormGroup>
                 <Label htmlFor = 'personalCare' />
                 <p>Enter personal care expenses:</p>
-                <Input name = 'personalCare' value = {personalCare} onChange={(e) => setPersonalCare(e.target.value)} placeholder='personal care'/>
+                <Input name = 'personalCare' value = {personalCare} onChange={(e) => setPersonalCare(e.target.value)} placeholder='Personal Care'/>
             </FormGroup>
             <FormGroup>
                 <Label htmlFor = 'lifestyle' />
                 <p>Enter lifestyle expenses:</p>
-                <Input name = 'lifetstyle' value = {lifestyle} onChange={(e) => setLifestyle(e.target.value)} placeholder='lifestyle' />
+                <Input name = 'lifetstyle' value = {lifestyle} onChange={(e) => setLifestyle(e.target.value)} placeholder='Lifestyle' />
             </FormGroup>
             <FormGroup>
                 <Label htmlFor = 'health' />
                 <p>Enter health expenses:</p>
-                <Input name = 'health' value = {health} onChange={(e) => setHealth(e.target.value)} placeholder = 'health' />
+                <Input name = 'health' value = {health} onChange={(e) => setHealth(e.target.value)} placeholder = 'Health' />
             </FormGroup>
             <FormGroup>
                 <Label htmlFor = 'insurance' />
                 <p>Enter insurance expenses:</p>
-                <Input name = 'insurance' value = {insurance} onChange={(e) => setInsurance(e.target.value)} placeholder='insurance'/>
+                <Input name = 'insurance' value = {insurance} onChange={(e) => setInsurance(e.target.value)} placeholder='Insurance'/>
             </FormGroup>
             <FormGroup>
                 <Label htmlFor = 'debt' />
                 <p>Enter debt payments:</p>
-                <Input name = 'debt' value = {debt} onChange={(e) => setDebt(e.target.value)} placeholder='debt'/>
+                <Input name = 'debt' value = {debt} onChange={(e) => setDebt(e.target.value)} placeholder='Debt'/>
             </FormGroup>
             <FormGroup>
                 <Label htmlFor = 'savings' />
                 <p>Enter funds transferred to savings:</p>
-                <Input name = 'savings' value = {savings} onChange={(e) => setSavings(e.target.value)} placeholder='savings'/>
+                <Input name = 'savings' value = {savings} onChange={(e) => setSavings(e.target.value)} placeholder='Savings'/>
             </FormGroup>
             <FormGroup>
                 <Label htmlFor = 'giving' />
                 <p>Enter giving expenses:</p>
-                <Input name = 'giving' value = {giving} onChange={(e) => setGiving(e.target.value)} placeholder='giving'/>
+                <Input name = 'giving' value = {giving} onChange={(e) => setGiving(e.target.value)} placeholder='Giving'/>
             </FormGroup>
             <Button type = 'submit'>Submit Expense Report</Button>
         </Form>
