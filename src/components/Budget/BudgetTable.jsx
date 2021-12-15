@@ -50,7 +50,7 @@ const BudgetTable = (props) => {
                 <br />
                 <br />
                 <hr />
-                <Button onClick={getIncome}>Get Actual Income Values</Button>
+                <Button color="dark" onClick={getIncome}>Get Actual Income Values</Button>
 
 
                 <Col m="3">
@@ -138,7 +138,7 @@ const BudgetTable = (props) => {
             {actualExpenseValues.Giving}
             <br />
             <br />
-            <Button onClick={getExpense}>Get Actual Expense Values</Button>
+            <Button color="dark" onClick={getExpense} >Get Actual Expense Values</Button>
         </tbody>
     </Table>
         

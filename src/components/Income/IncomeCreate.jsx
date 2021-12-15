@@ -52,7 +52,7 @@ const IncomeCreate = (props) => {
                 <p>Enter miscellaneous income:</p>
                 <Input name="misc" value={misc} placeholder="Enter miscellaneous income" onChange={(e) => setMisc(e.target.value)}/>
             </FormGroup>
-            <Button type="submit" >Submit Income Report</Button>
+            <Button color="dark" type="submit" >Submit Income Report</Button>
         </Form>
         </>
     )
