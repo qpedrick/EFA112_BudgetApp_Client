@@ -15,7 +15,9 @@ const ExpenseCreate = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
+
         fetch('http://localhost:3001/expense/create', {
+
             method: 'POST',
             body: JSON.stringify(
             {
@@ -35,6 +37,7 @@ const ExpenseCreate = (props) => {
                 "Authorization": `Bearer ${props.token}`
             })
         })
+
         .then((res) => {
             console.log(res)
             return res.json()
@@ -51,6 +54,7 @@ const ExpenseCreate = (props) => {
             setSavings(0);
             setGiving(0);
             props.fetchExpenses()
+
         })
         .catch(err => console.log(err))
     }
