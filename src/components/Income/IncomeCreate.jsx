@@ -30,7 +30,7 @@ const IncomeCreate = (props) => {
 
     return (
         <>
-        <h2>Input Income</h2>
+        <h2>Log Income</h2>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="paychecks"/>
@@ -52,7 +52,7 @@ const IncomeCreate = (props) => {
                 <p>Enter miscellaneous income:</p>
                 <Input name="misc" value={misc} placeholder="Enter miscellaneous income" onChange={(e) => setMisc(e.target.value)}/>
             </FormGroup>
-            <Button type="submit" >Submit</Button>
+            <Button type="submit" >Submit Income Report</Button>
         </Form>
         </>
     )
