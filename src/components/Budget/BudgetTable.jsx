@@ -13,9 +13,10 @@ const BudgetTable = (props) => {
         "max-width": "100%"
     }
 
-    // const tbodyStyle = {
-    //     "margin-left": "50rem",
-    // }
+    const btnStyle = {
+        "color": "white",
+        "background-color": "black"
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -37,6 +38,7 @@ const BudgetTable = (props) => {
         })
         .catch(err => console.log(err))
     }
+
     return(
         <Container>
         <Row>
@@ -55,7 +57,8 @@ const BudgetTable = (props) => {
                     <th>Budget Income</th>
                     <th>Budget-to-Actuals</th>
                 </tr>
-                <tbody>
+            </thead>
+                <td>
                 Paychecks:
                 <br/>
                 <br/>
@@ -68,10 +71,10 @@ const BudgetTable = (props) => {
                 Misc:
                 <br/>
                 <br/>
-            </tbody>
+            </td>
                 <td>        
-                <Col md="4">
-                <FormGroup >
+            <Col >
+            <FormGroup >
                 <Label htmlFor="paychecks"/>
                 <p>Enter paycheck income:</p>
                 <Input name="paychecks" value={paychecks} placeholder="Enter paycheck income" onChange={(e) => setPaychecks(e.target.value)}/>
@@ -91,18 +94,14 @@ const BudgetTable = (props) => {
                 <p>Enter miscellaneous income:</p>
                 <Input name="misc" value={misc} placeholder="Enter miscellaneous income" onChange={(e) => setMisc(e.target.value)}/>
             </FormGroup>
-            <Button type="submit" >Submit Budget</Button>
-        </Col>
-        </td>
-            </thead>
-            </Table>
-        </Col>
+            <Button type="submit" style={btnStyle} >Submit Budget</Button>
+            </Col>
+            </td>
             <tbody>
-                
+
             </tbody>
-        <br />
-        <br />
-        <br />
+            </Table>
+            </Col>
 
         <Table>
             <thead>
