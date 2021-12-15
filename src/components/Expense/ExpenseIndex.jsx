@@ -43,7 +43,7 @@ useEffect(() => {
                 <Col md = '3'>
                     <ExpenseCreate fetchExpenses = {fetchExpenses} token = {props.token} />
                 </Col>
-                <Col md = '11'>
+                <Col md = '9'>
                     <ExpenseTable expenses = {expenses} editUpdateExpense = {editUpdateExpense} 
                     updateOn = {updateOn} fetchExpenses = {fetchExpenses} token = {props.token} />
                 </Col>
