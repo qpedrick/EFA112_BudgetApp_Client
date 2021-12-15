@@ -22,7 +22,7 @@ const BudgetAccordian = (props) => {
                 Total Budget
             </Accordion.Header>
                 <Accordion.Body style = {textStyles}>
-                    <BudgetTable />
+                    <BudgetTable token = {props.sessionToken}/>
                 </Accordion.Body>
         </Accordion.Item>
     </Accordion>
