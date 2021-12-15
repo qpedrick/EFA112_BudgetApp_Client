@@ -6,21 +6,44 @@ const BudgetTable = (props) => {
     return(
         <>
         <h3>View your full budget here</h3>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <hr />
         <Table>
             <thead>
                 <tr>
-                    <th>Budgeted Income</th>
                     <th>Actual Income</th>
-                    <th>Budgeted Expenses</th>
-                    <th>Actual Expenses</th>
-                    <th>Profit/Loss</th>
+                    <th>Budget Income</th>
+                    <th>Difference between Budget and Actual</th>
                 </tr>
             </thead>
             <tbody>
-                {/* < IncomeTable /> */}
             </tbody>
         </Table>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Table>
+            <thead>
+                <tr>
+                    <th>Actual Expenses</th>
+                    <th>Budget Expenses</th>
+                    <th>Difference between Budget and Actual</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </Table>
+        
         </>
     )
 }
