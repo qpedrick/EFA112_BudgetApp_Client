@@ -18,10 +18,10 @@ const Auth = (props) => {
                 <Col md = '4' className = 'description-col' style = {styles}>
                     <br/>
                     <br/>
-                    <h3>What the heck is this thing?</h3>
+                    <h3></h3>
                     <br />
                     <br />
-                Using this application you can track expenses and income and see the totals displayed against each other.
+                Using this application, you can track budgeted income and expenses and compare them to your actual income and expenses, as well as see the totals displayed against each other with a profit/loss statement.
                 </Col>
                 <Col md = '4' className = 'login-col' style = {styles}>
                     <Login updateToken = {props.updateToken} />
