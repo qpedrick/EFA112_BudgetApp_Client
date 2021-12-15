@@ -15,7 +15,7 @@ const ExpenseCreate = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:3001/expense/`, {
+        fetch(`http://localhost:3001/expense`, {
             method: 'POST',
             body: JSON.stringify(
             {
@@ -48,6 +48,7 @@ const ExpenseCreate = (props) => {
             setDebt('');
             setSavings('');
             setGiving('');
+            
         })
         .catch(err => console.log(err))
     }

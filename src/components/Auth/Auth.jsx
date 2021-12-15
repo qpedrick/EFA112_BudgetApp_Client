@@ -1,34 +1,38 @@
-import React from "react";
-import { Container, Row, Col } from "reactstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Button } from "reactstrap";
 import Signup from "./Signup";
 import Login from "./Login";
+import "./Auth.css"
 
 const Auth = (props) => {
-    const styles = {
-        'textAlign': 'center',
+
+
+    const [toggle, setToggle] = useState(true);
+    const [loginOrRegister, setLoginOrRegister] = useState("Sign Up");
+
+    const handleToggle = () => {
+        if (toggle === true) {
+            setToggle(false);
+            setLoginOrRegister("Login");
+        } else {
+            setToggle(true);
+            setLoginOrRegister("Sign Up");
+        }
     }
-    
-    return(
-        <Container className = 'auth-container'>
-            <h1 style = {styles}>Plan Your Budget</h1>
-            <Row>
-                <Col md = '4' className = 'signup-col' style = {styles}>
-                    <Signup updateToken = {props.updateToken} />
-                </Col>
-                <Col md = '4' className = 'description-col' style = {styles}>
-                    <br/>
-                    <br/>
-                    <h3>What the heck is this thing?</h3>
-                    <br />
-                    <br />
-                Using this application you can track expenses and income and see the totals displayed against each other.
-                </Col>
-                <Col md = '4' className = 'login-col' style = {styles}>
-                    <Login updateToken = {props.updateToken} />
+
+    return (
+        <Container className='auth-container'>
+
+            <Row mb-3>
+                {toggle ? <Login updateToken={props.updateToken} /> : <Signup updateToken={props.updateToken} />}
+                <Col>
+                <Button outline color="dark" className="button"  onClick={handleToggle}>{loginOrRegister}</Button>
                 </Col>
             </Row>
+
         </Container>
     )
 }
 
 export default Auth;
+

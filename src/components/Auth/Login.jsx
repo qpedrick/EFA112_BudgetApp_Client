@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import React, { useState } from 'react';
+import { Form, FormGroup, Label, Input, Button, Container, Row } from 'reactstrap';
+import "./Auth.css"
 
 const Login = (props) => {
     const [email, setEmail] = useState('');
@@ -11,39 +12,42 @@ const Login = (props) => {
             method: 'POST',
             body: JSON.stringify(
                 {
-                user:
-                {
-                    email: email,
-                    password: password
-                }
+                    user:
+                    {
+                        email: email,
+                        password: password
+                    }
                 }),
             headers: new Headers({
                 'Content-Type': 'application/json',
             })
         })
-        .then(
-            (res) => res.json()
-        ).then((data) => {
-            props.updateToken(data.sessionToken);
-        })
-        .catch(err => console.log(err))
-        }
+            .then(
+                (res) => res.json()
+            ).then((data) => {
+                props.updateToken(data.sessionToken);
+            })
+            .catch(err => console.log(err))
+    }
 
-    return(
-        <div>
-            <h1>Login</h1>
-            <Form onSubmit = {handleSubmit}>
-                <FormGroup>
-                    <Label htmlFor = 'email'>Email</Label>
-                    <Input onChange = {(e) => setEmail(e.target.value)} value = {email} type = 'email' name = 'email' placeholder = 'enter email here!'/>
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor = 'password'>Password</Label>
-                    <Input onChange = {(e) => setPassword(e.target.value)} value = {password} type = 'password' name = 'password' placeholder = 'enter password here!'/>
-                </FormGroup>
-                <Button type = 'submit'>Login!</Button>
-            </Form>
-        </div>
+    return (
+        <Container className='formsContainer'>
+            <Row>
+                <h1>Plan Your Budget</h1>
+                <h3>Login</h3>
+                <Form onSubmit={handleSubmit} className="removeGap">
+                    <FormGroup>
+                        <Label htmlFor='email'>Email</Label>
+                        <Input onChange={(e) => setEmail(e.target.value)} value={email} type='email' name='email' placeholder='enter email here!' />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label htmlFor='password'>Password</Label>
+                        <Input onChange={(e) => setPassword(e.target.value)} value={password} type='password' name='password' placeholder='enter password here!' />
+                    </FormGroup>
+                    <Button type='submit' outline color="dark" className="button">Login!</Button>
+                </Form>
+            </Row>
+        </Container>
     )
 }
 
