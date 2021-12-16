@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Table, Button, Container, Row, Col} from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 
 const BudgetTable = (props) => {
@@ -36,7 +37,7 @@ const BudgetTable = (props) => {
     const [budgetGiving, setBudgetGiving] =useState(0);
 
     const getIncome = () => {
-        fetch('http://localhost:3001/income/', {
+        fetch(`${APIURL}/income/`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -73,7 +74,7 @@ const BudgetTable = (props) => {
 }
 
     const getExpenses = () => {
-        fetch('http://localhost:3001/expense/', {
+        fetch(`${APIURL}/expense/`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',

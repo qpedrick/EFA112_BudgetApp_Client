@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, Row, Col } from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 const IncomeEdit = (props) => {
     const [editPaychecks, setEditPaychecks] = useState(props.incomeBudgetToUpdate.paychecks);
@@ -9,7 +10,7 @@ const IncomeEdit = (props) => {
 
     const incomeUpdate = (event, incomeBudget) => {
         event.preventDefault();
-        fetch(`http://localhost:3001/income/${props.incomeBudgetToUpdate.id}`, {
+        fetch(`${APIURL}/income/${props.incomeBudgetToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({ Paychecks: editPaychecks, Investments: editInvestments, Reimbursements: editReimbursements, Misc: editMisc }),
             headers: new Headers({

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 const IncomeCreate = (props) => {
     const [paychecks, setPaychecks] = useState(0);
@@ -9,7 +10,7 @@ const IncomeCreate = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3001/income/create/', {
+        fetch(`${APIURL}/income/create/`, {
             method: 'POST',
             body: JSON.stringify({Paychecks: paychecks, Investments: investments, Reimbursements: reimbursements, Misc: misc}),
             headers: new Headers({

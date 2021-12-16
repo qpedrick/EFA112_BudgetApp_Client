@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, Col, Row } from 'reactstrap';
 import './Expense.css'
+import APIURL from '../../helpers/environment';
 
 const ExpenseEdit = (props) => {
     const [editTransportation, setEditTransportation] = useState(props.expenseToUpdate.Transportation);
@@ -16,7 +17,7 @@ const ExpenseEdit = (props) => {
 
     const expenseUpdate = (e, expense) => {
         e.preventDefault();
-        fetch(`http://localhost:3001/expense/${props.expenseToUpdate.id}`, {
+        fetch(`${APIURL}/expense/${props.expenseToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify(
                 {

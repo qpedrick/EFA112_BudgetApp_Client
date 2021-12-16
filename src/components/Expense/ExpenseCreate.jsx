@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 const ExpenseCreate = (props) => {
     const [transportation, setTransportation] = useState(0);
@@ -16,7 +17,7 @@ const ExpenseCreate = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:3001/expense/create', {
+        fetch(`${APIURL}/expense/create`, {
 
             method: 'POST',
             body: JSON.stringify(

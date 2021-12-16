@@ -3,13 +3,14 @@ import IncomeCreate from './IncomeCreate';
 import IncomeEdit from './IncomeEdit';
 import IncomeTable from './IncomeTable';
 import { Container, Row, Col } from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 const IncomeIndex = (props) => {
     const [incomeBudgets, setIncomeBudgets] = useState([]);
     const [updateIncomeBudget, setUpdateIncomeBudget] = useState(false);
     const [incomeBudgetToUpdate, setIncomeBudgetToUpdate] = useState({});
     const fetchIncomes = () => {
-        fetch('http://localhost:3001/income/', {
+        fetch(`${APIURL}/income/`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',

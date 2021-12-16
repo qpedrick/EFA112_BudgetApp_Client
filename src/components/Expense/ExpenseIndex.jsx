@@ -3,13 +3,14 @@ import { Container, Row, Col } from 'reactstrap';
 import ExpenseCreate from './ExpenseCreate';
 import ExpenseTable from './ExpenseTable';
 import ExpenseEdit from './ExpenseEdit';
+import APIURL from '../../helpers/environment';
 
 const ExpenseIndex = (props) => {
     const [expenses, setExpenses] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
     const [expenseToUpdate, setExpenseToUpdate] = useState({});
     const fetchExpenses = () => {
-        fetch('http://localhost:3001/expense', {
+        fetch(`${APIURL}/expense`, {
         method: 'GET',
         headers: new Headers({
             'Content-Type': 'application/json',

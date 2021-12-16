@@ -1,10 +1,11 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 const IncomeTable = (props) => {
 
     const deleteIncome = (incomeBudget) => {
-        fetch(`http://localhost:3001/income/${incomeBudget.id}`, {
+        fetch(`${APIURL}/income/${incomeBudget.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
