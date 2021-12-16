@@ -4,6 +4,9 @@ import React from "react";
 import BudgetTable from './BudgetTable';
 import IncomeIndex from '../Income/IncomeIndex';
 import ExpenseIndex from '../Expense/ExpenseIndex'
+import Footer from '../Site/Footer'
+import Description from '../Site/Description'
+import './Budget.css'
 
 const BudgetAccordian = (props) => { 
     const textStyles = {
@@ -16,36 +19,37 @@ const BudgetAccordian = (props) => {
 
     return(
     <div style = {textStyles}>
-    <Accordion>
+    <Description />
+    <Accordion defaultActiveKey='0' flush>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>
-                TotalBudget
+                Total Budget
             </Accordion.Header>
                 <Accordion.Body style = {textStyles}>
-                    <BudgetTable />
+                    <BudgetTable token = {props.sessionToken}/>
                 </Accordion.Body>
         </Accordion.Item>
     </Accordion>
 
     <br />
 
-    <Accordion>
+    <Accordion flush>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>
-                Income
+                Actual Income
             </Accordion.Header>
                 <Accordion.Body style = {textStyles}>
-                    <IncomeIndex token={props.sessionToken}/>
+                    <IncomeIndex token = {props.sessionToken} />
                 </Accordion.Body>
         </Accordion.Item>
     </Accordion>
 
     <br />
 
-    <Accordion>
+    <Accordion flush>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>
-                Expenses
+                Actual Expenses
             </Accordion.Header>
                 <Accordion.Body style = {textStyles}>
                     <ExpenseIndex token = {props.sessionToken} />
@@ -55,8 +59,8 @@ const BudgetAccordian = (props) => {
 
     <br />
 
-    <Button style = {buttonStyles} onClick = {props.clearToken}>Logout</Button>
-
+    <Button color="dark" style = {buttonStyles} onClick = {props.clearToken}>Logout</Button>
+    <Footer/>
     </div>
     )}
 

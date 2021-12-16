@@ -29,8 +29,8 @@ const ExpenseTable = (props) => {
                     <td>{expense.Savings}</td>
                     <td>{expense.Giving}</td>
                     <td>
-                        <Button color = 'warning' onClick = {() => {props.editUpdateExpense(expense); props.updateOn()}}>Update</Button>
-                        <Button color = 'danger' onClick = {() => {deleteExpense(expense)}}>Delete</Button>
+                        <Button outline color = 'primary' size="sm" onClick = {() => {props.editUpdateExpense(expense); props.updateOn()}}>Update Expenses</Button>
+                        <Button outline color = 'secondary' size="sm" onClick = {() => {deleteExpense(expense)}}>Delete Expenses</Button>
                     </td>
                 </tr>
             )
@@ -39,22 +39,22 @@ const ExpenseTable = (props) => {
 
     return(
         <>
-        <h3>Expenses Table heading</h3>
+        <h3>Expenses</h3>
         <hr />
         <Table>
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>transportation</th>
-                    <th>housing</th>
-                    <th>food</th>
-                    <th>personal care</th>
-                    <th>lifestyle</th>
-                    <th>health</th>
-                    <th>insurance</th>
-                    <th>debt</th>
-                    <th>savings</th>
-                    <th>giving</th>
+                    <th>Transportation</th>
+                    <th>Housing</th>
+                    <th>Food</th>
+                    <th>Personal Care</th>
+                    <th>Lifestyle</th>
+                    <th>Health</th>
+                    <th>Insurance</th>
+                    <th>Debt</th>
+                    <th>Savings</th>
+                    <th>Giving</th>
                 </tr>
             </thead>
             <tbody>

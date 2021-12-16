@@ -30,25 +30,29 @@ const IncomeCreate = (props) => {
 
     return (
         <>
-        <h2>Set Budget</h2>
+        <h3>Log Income</h3>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="paychecks"/>
-                <Input name="paychecks" value={paychecks} placeholder="Enter paycheck income" onChange={(e) => setPaychecks(e.target.value)}/>
+                <p>Enter paycheck income:</p>
+                <Input name="paychecks" value={paychecks} placeholder="Paychecks" onChange={(e) => setPaychecks(e.target.value)}/>
             </FormGroup>
             <FormGroup>
-            <Label htmlFor="investments"/>
-                <Input name="investments" value={investments} placeholder="Enter investments income" onChange={(e) => setInvestments(e.target.value)}/>
+                <Label htmlFor="investments"/>
+                <p>Enter investments income:</p>
+                <Input name="investments" value={investments} placeholder="Investments" onChange={(e) => setInvestments(e.target.value)}/>
             </FormGroup>
             <FormGroup>
-            <Label htmlFor="reimbursements"/>
-                <Input name="reimbursements" value={reimbursements} placeholder="Enter reimbursements income" onChange={(e) => setReimbursements(e.target.value)}/>
+                <Label htmlFor="reimbursements"/>
+                <p>Enter reimbursements income:</p>
+                <Input name="reimbursements" value={reimbursements} placeholder="Reimbursements" onChange={(e) => setReimbursements(e.target.value)}/>
             </FormGroup>
             <FormGroup>
-            <Label htmlFor="misc"/>
-                <Input name="misc" value={misc} placeholder="Enter miscellaneous income" onChange={(e) => setMisc(e.target.value)}/>
+                <Label htmlFor="misc"/>
+                <p>Enter miscellaneous income:</p>
+                <Input name="misc" value={misc} placeholder="Misc" onChange={(e) => setMisc(e.target.value)}/>
             </FormGroup>
-            <Button type="submit" >Submit</Button>
+            <Button color="dark" type="submit" >Submit Income Report</Button>
         </Form>
         </>
     )

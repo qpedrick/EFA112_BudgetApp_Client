@@ -24,10 +24,8 @@ const IncomeTable = (props) => {
                     <td>{incomeBudget.Reimbursements}</td>
                     <td>{incomeBudget.Misc}</td>
                     <td>
-                        <Button color="warning" onClick={() => {props.editUpdateIncomeBudget(incomeBudget); props.updateOn()}}>Update</Button>
-                        <br />
-
-                        <Button color="danger" onClick={() => {deleteIncome(incomeBudget)}}>Delete</Button>
+                        <Button outline color = 'primary' size="sm" onClick={() => {props.editUpdateIncomeBudget(incomeBudget); props.updateOn()}}>Update Income</Button>
+                        <Button outline color = 'secondary' size="sm" onClick={() => {deleteIncome(incomeBudget)}}>Delete Income</Button>
                     </td>
                 </tr>
             )
@@ -36,7 +34,7 @@ const IncomeTable = (props) => {
 
     return(
         <>
-        <h2>Budget</h2>
+        <h3>Income</h3>
         <hr />
         <Table>
             <thead>
