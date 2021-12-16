@@ -29,8 +29,8 @@ const ExpenseTable = (props) => {
                     <td>{expense.Savings}</td>
                     <td>{expense.Giving}</td>
                     <td>
-                        <Button color = 'warning' onClick = {() => {props.editUpdateExpense(expense); props.updateOn()}}>Update Expenses</Button>
-                        <Button color = 'danger' onClick = {() => {deleteExpense(expense)}}>Delete Expenses</Button>
+                        <Button outline color = 'primary' size="sm" onClick = {() => {props.editUpdateExpense(expense); props.updateOn()}}>Update Expenses</Button>
+                        <Button outline color = 'secondary' size="sm" onClick = {() => {deleteExpense(expense)}}>Delete Expenses</Button>
                     </td>
                 </tr>
             )

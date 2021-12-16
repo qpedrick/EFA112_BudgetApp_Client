@@ -5,6 +5,7 @@ import BudgetTable from './BudgetTable';
 import IncomeIndex from '../Income/IncomeIndex';
 import ExpenseIndex from '../Expense/ExpenseIndex'
 import Footer from '../Site/Footer'
+import Description from '../Site/Description'
 import './Budget.css'
 
 const BudgetAccordian = (props) => { 
@@ -18,6 +19,7 @@ const BudgetAccordian = (props) => {
 
     return(
     <div style = {textStyles}>
+    <Description />
     <Accordion defaultActiveKey='0' flush>
         <Accordion.Item eventKey = '0'>
             <Accordion.Header style = {textStyles}>

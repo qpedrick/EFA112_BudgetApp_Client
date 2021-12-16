@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
+import React, { useState } from 'react';
+import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, Row, Col } from 'reactstrap';
 
 const IncomeEdit = (props) => {
     const [editPaychecks, setEditPaychecks] = useState(props.incomeBudgetToUpdate.paychecks);
@@ -11,7 +11,7 @@ const IncomeEdit = (props) => {
         event.preventDefault();
         fetch(`http://localhost:3001/income/${props.incomeBudgetToUpdate.id}`, {
             method: 'PUT',
-            body: JSON.stringify({Paychecks: editPaychecks, Investments: editInvestments, Reimbursements: editReimbursements, Misc: editMisc}),
+            body: JSON.stringify({ Paychecks: editPaychecks, Investments: editInvestments, Reimbursements: editReimbursements, Misc: editMisc }),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${props.token}`
@@ -21,30 +21,41 @@ const IncomeEdit = (props) => {
             props.updateOff();
         })
     }
-
+    const leaveModal = () => {
+        props.updateOff();
+    }
     return (
         <Modal isOpen={true}>
-            <ModalHeader>Update Income</ModalHeader>
+            <ModalHeader>
+            <Row md="12">
+                    <Col md='auto'>
+                    Update Income
+                    </Col>
+                    <Col md='auto'>
+                        <Button outline color="dark" onClick={leaveModal} className="exit">X</Button>
+                    </Col>
+                </Row>
+            </ModalHeader>
             <ModalBody>
                 <Form onSubmit={incomeUpdate}>
                     <FormGroup>
                         <Label htmlFor="paychecks">Edit Paychecks:</Label>
-                        <Input name="paychecks" value={editPaychecks} onChange={(event) => setEditPaychecks(event.target.value)} placeholder= "Paychecks"/>
+                        <Input name="paychecks" value={editPaychecks} onChange={(event) => setEditPaychecks(event.target.value)} placeholder="Paychecks" />
                     </FormGroup>
                     <FormGroup>
-                    <Label htmlFor="investments">Edit Investments:</Label>
-                        <Input name="investments" value={editInvestments} onChange={(event) => setEditInvestments(event.target.value)} placeholder= "Investments"/>
+                        <Label htmlFor="investments">Edit Investments:</Label>
+                        <Input name="investments" value={editInvestments} onChange={(event) => setEditInvestments(event.target.value)} placeholder="Investments" />
                     </FormGroup>
                     <FormGroup>
-                    <Label htmlFor="reimbursements">Edit Reimbursements:</Label>
-                        <Input name="reimbursements" value={editReimbursements} onChange={(event) => setEditReimbursements(event.target.value)} placeholder= "Reimbursements"/>
+                        <Label htmlFor="reimbursements">Edit Reimbursements:</Label>
+                        <Input name="reimbursements" value={editReimbursements} onChange={(event) => setEditReimbursements(event.target.value)} placeholder="Reimbursements" />
                     </FormGroup>
                     <FormGroup>
-                    <Label htmlFor="misc">Edit Misc:</Label>
-                        <Input name="misc" value={editMisc} onChange={(event) => setEditMisc(event.target.value)} placeholder= "Misc"/>
+                        <Label htmlFor="misc">Edit Misc:</Label>
+                        <Input name="misc" value={editMisc} onChange={(event) => setEditMisc(event.target.value)} placeholder="Misc" />
                     </FormGroup>
-                <Button color="dark" type="submit">Submit Updated Income</Button>
-            </Form>
+                    <Button color="dark" type="submit">Submit Updated Income</Button>
+                </Form>
             </ModalBody>
         </Modal>
     )
