@@ -15,13 +15,13 @@ const Description = () => {
                     Select the Actual Income tab and log your incomes. You can also update and delete logged incomes.
                 </p>
                 <p>
-                    Select the Actual Expense tab and log your expenses. You can also update and delete logged expenses.
+                    Select the Actual Expenses tab and log your expenses. You can also update and delete logged expenses.
                 </p>
                 <p>
-                    Back to top of the page and select the Total Budget tab. Add your Budget Income/Expenses and press Get Actual Income/Expenses Values to calculate for results. 
+                    Back at the top of the page, select the Total Budget tab. Add your Budget Income/Expenses and press Get Actual Income/Expenses Values to calculate results. 
                 </p>
                 <p>
-                    Results will render under Budget-To-Actuals
+                    Results will render under Budget-To-Actuals.
                 </p>
             </div>
         </div>
