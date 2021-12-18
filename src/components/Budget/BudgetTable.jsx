@@ -172,6 +172,12 @@ const BudgetTable = (props) => {
                         <p>
                         {actualMiscTotal}
                         </p>
+                        <p>
+                        Total Income:
+                        </p>
+                        <p>
+                        {actualPaycheckTotal + actualInvestmentTotal + actualReimbursementTotal + actualMiscTotal}
+                        </p>
                 </Col>
                 <Col m="3">
                     <h5>Budget Income</h5> 
@@ -300,6 +306,12 @@ const BudgetTable = (props) => {
                         </p>
                         <p>
                         {actualGivingTotal}
+                        </p>
+                        <p>
+                        Total Expenses:
+                        </p>
+                        <p>
+                        {actualTransportationTotal + actualHousingTotal + actualFoodTotal + actualPersonalCareTotal + actualLifestyleTotal + actualHealthTotal + actualInsuranceTotal + actualDebtTotal + actualSavingsTotal + actualGivingTotal} 
                         </p>
                 </Col>
                 <Col m="3">
